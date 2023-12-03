@@ -1,6 +1,6 @@
 # Aethermon: Blockchain-based NFT Trading Platform
 
-![Aethermon Logo](link_to_logo)
+![Aethermon Logo](./logo.jpg)
 
 ## Overview
 
