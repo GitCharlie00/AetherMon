@@ -1,0 +1,52 @@
+[Claudio]
+Hi everyone folks!!! Few things everyone likes: pizza, travel and Pokemon. Here, we've disproved that, we've come up with a project that makes an ugly version of Pokemon, based on a blockchain infrastructure, with a little dash of artificial intelligence magic. So here is Aethermon, a blockchain-based game in which you can generate and trade your favorite little monsters which can tackle a variety of tasks and missions.
+
+Let me quickly introduce you to our dream team. 
+
+Nicolo is creativity at the service of everything. 
+
+Carmelina is our front-end expert. 
+
+Mattia, the Solidity smooth operator. 
+
+Then there's me, Claudio, I work a lot, with a lot of anxiety. 
+
+Last but not least, Nicholas, technique and precision at the service of the team.
+
+[Carmelina]
+Our goal is to make a game of AI-generated collectibles. Our little monsters are managed with NFT(so no fungible tokens) that represent the ownership and authenticity of a unique monster, so each monster has its own features.
+We had think also about some "missions", or better "little games", that monsters can do through which they can obtain fungible tokens.
+
+But we really need a blockchain? Let's look!
+
+Do we need to store state? YES. It's crucial to identify the owner of each collectible and ensure that there are no duplicates in the collection. 
+
+Are there multiple writers? YES. The DApp can be accessed by a broder number of individuals to participate and interact with it. 
+
+Can we use a TTP? NO. There isn't an unique identity that manage all the collectibles, anyone can had and manage them.
+
+Are all writers known? It would be nice, but is almost impossible to know each writers because there are too many of them.
+
+Se we can conclude that we need a PERMISSIONLESS BLOCKCHAIN so there are no restriction and the participation is not controlled by an administrator. So out blockchain is decentralized, public and avoid cheating.
+
+
+[Nicholas]
+So this is our homepage of the website,
+here we can access to the personal user page.
+
+This is the user main page, of course we can see a random name for the user that we absolotely don't know.
+Here we can see our personal aethermons, the total of our game currency and also we can generate a new aethermon or go 
+to the market to sell or buy the aethermons.
+
+Also Down below we have the list of our transactions in order to keep track of them
+
+[Mattia]
+Now we can see some of the main functionalities of this dapp.Obviosuly, a player should be able to create a new moster. To do so, interacting via the web page and using web3, the backend of the application will verify that the user has enough AEtherMonCoin, than it proceed with the generation of the image rapressenting the monster, which will not be saved on the blockchain , in order to avoid high gas price, but it will be managed with IPFS. Then, there will be the call to the contract that will actually save the monster on the blockchain (so its stats and link to IPFS).
+Another functionalities of this game is the trade market. Every user can sell its monsters or buy monsters posted by others players in the market. Even in this case, all the logic is implemented via a smart contract (change of owner, state of a monster [on selling, selled , and so on)
+Finally, we want some actions. Our idea is to implement fights among the eatheromns :)
+
+[Nicolò]
+we'll not be that easy to implement everything, we'll have for example a problem with the implementation and the management of the AI model
+another problem may be the Pseudorandomicity, there isn't a way to create a pseudorandom variable without using an extern oracle.
+An issue will surely be the Market & tasks complexity. For example the management of the activity to do with your monsters, like the implementation of combat with other players, that would need a complex implementation.
+thank, gotta block em all
