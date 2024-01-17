@@ -1,0 +1,220 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-family: 'Sans Serif Collection';
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+    margin-left: 90px;
+}
+
+h2 {
+    font-family: 'Sans Serif Collection';
+    font-weight: bold;
+    color: white;
+    padding: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+h3 {
+    font-family: 'Sans Serif Collection';
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding: 0;
+    text-align: left;
+}
+
+h4{
+    font-family: 'Sans Serif Collection';
+    font-weight: bold;
+    color: white;
+    font-size:25px;
+    padding: 0;
+    text-align: left;
+    line-height: 1.0;
+
+}
+
+.sezione1 {
+    font-family: Verdana;
+    line-height: 1.0;
+    background-image: url('sfondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
+    .sezione1 p {
+        margin-left: 90px;
+        font-size:25px;
+    }
+
+button {
+    margin-top: 50px;
+    margin-left: 100px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration:none;
+    cursor: pointer;
+    border: 3px solid;
+    color: white;
+    background-color: dimgrey;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.sezione2 {
+    background-color: white;
+    height: 300px;
+    width: auto;
+}
+.q {
+    width: 27%; /* Larghezza del quadrato in pixel */
+    height: 150px; /* Altezza del quadrato in pixel */
+    background-color: white;
+    color: dimgray; /* Colore del testo all'interno del quadrato */
+    text-align: center; /* Allineamento del testo al centro */
+    margin-right: 10px; /* Margine destro per separare i quadrati */
+    float: left;
+    line-height:1.25;
+    padding:30px; 
+}
+
+
+.sezione3 {
+    background-color: #000;
+    height: 250px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+   
+}
+
+    .sezione3 img {
+    height:200px;
+    width:200px;
+
+    }
+
+#txrecenti{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    }
+
+#txrecenti th, #txrecenti td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#txrecenti th{
+    background-color: #f2f2f2;
+}
+
+#goButton {
+            top:10px;
+            right: 20px;
+            padding: 20px 20px;
+            margin: 10px auto;
+            margin-top: 30px;
+            margin-left: 100px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+           
+}
+
+#profilo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+#menuTendina {
+    display: none;
+            width: 150px;
+            background-color: black;
+            border-radius: 8px;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            z-index: 1;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#menuTendina li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    background-color: rgb(73, 2, 140); /* Colore blu */
+    color: #ffffff; /* Colore del testo bianco */
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px; /* Margine di 10px da tutti i lati */
+    margin-left:100px;
+    float: left;
+}
+
+.myaether {
+    width: 95%;
+    margin: 20px auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+  }
+
+  .character {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .character img {
+    width: 100%;
+    height: auto;
+  }
