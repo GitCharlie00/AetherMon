@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Rimuove le barre di scorrimento */
+    background: url('bg.png') center/contain no-repeat;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-container {
+    position: absolute;
+    background-color: #4d4242; /* Colore di sfondo azzurro */
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #131313; /* Bordo attorno al box */
+    margin: 40px;
+    width: 300px;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Allinea gli elementi orizzontalmente con spazio tra di essi */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+}
+
+.top-left {
+    position: relative;
+    top: -20%;
+    left: -15%;
+}
+
+.bottom-right {
+    position: relative;
+    bottom: -20%;
+    right: -10%;
+}
+
+.pokemon-info {
+    text-align: left; /* Allinea il testo a sinistra */
+}
+
+.pokemon-info h2,
+.pokemon-info p {
+    margin: 0;
+    color: #fff;
+}
+
+.pokemon-bar {
+    width: 250px; /* Larghezza della barra di vita */
+    height: 20px;
+    background-color: #ecf0f1; /* Colore di sfondo grigetto */
+    border-radius: 10px;
+    margin-top: 3%;
+    overflow: hidden;
+}
+
+.pokemon-health {
+    height: 100%;
+    background-color: #3ce753; /* Colore rosso per la barra di vita */
+}
+
+.me,
+.opponent {
+    position: absolute;
+    width: 80px; /* Sostituisci con la larghezza desiderata per le immagini Pokemon */
+    height: auto; /* L'altezza sarà proporzionata alla larghezza */
+}
+
+.me {
+    bottom: 25%;
+    left: 18%;
+    transform: scaleX(-1) scale(5.3);
+}
+
+.opponent {
+    top: 40%;
+    right: 27%;
+    transform: scale(3.3);
+}
+
+.moves-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.move-button {
+    background-color: #2ecc71; /* Colore del pulsante */
+    width: 70%;
+    color: #fff;
+    padding: 10px;
+    margin: 1pt;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Aggiunta della transizione per il colore di sfondo */
+
+    /* Hover effect */
+    &:hover {
+        background-color: #27ae60; /* Cambia il colore al passaggio del mouse */
+    }
+}
+
+/* Aggiunta uno stile per il secondo pulsante */
+.move-button:nth-child(2) {
+    background-color: #e67e22; /* Altro colore per differenziare i pulsanti */
+    transition: background-color 0.3s ease; /* Aggiunta della transizione per il colore di sfondo */
+
+    /* Hover effect */
+    &:hover {
+        background-color: #d35400; /* Cambia il colore al passaggio del mouse */
+    }
+}
+
+/* Aggiungi questa parte per le animazioni */
+@keyframes shakeAnimation {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.pokemon-image {
+    width: 100%;
+    margin-top: 20px;
+    transform-origin: center; /* Aggiunto per migliorare l'effetto specchio */
+    transition: transform 0.3s ease; /* Aggiunto effetto di transizione per il ritorno alla posizione normale */
+}
+
+/* Aggiorna la classe mirror-image per applicare l'effetto specchio anche durante l'animazione */
+.mirror-image {
+    transform: scaleX(-1);
+}
+
+/* Aggiunta della classe per l'animazione */
+.attack-animation {
+    animation: shakeAnimation 0.6s ease-in-out; /* Aggiunta dell'animazione */
+}
