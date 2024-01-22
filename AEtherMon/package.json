@@ -1,0 +1,14 @@
+{
+  "name": "aethermon",
+  "version": "1.0.0",
+  "description": "A first implemantation of the dapp for blockchain exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mattia Russo",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1"
+  }
+}
