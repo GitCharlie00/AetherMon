@@ -30,6 +30,31 @@ app.get("/battle", (req,res) => {
     res.render("pokemon_battle")
 });
 
+app.get("/monster_creation", (req,res) => {
+    console.log("here")
+    res.render("monster_creation", {text: "miao"})
+})
+
+app.get("/microtransactions", (req,res) => {
+    console.log("here")
+    res.render("microtransactions", {text: "miao"})
+})
+
+app.get("/missions", (req,res) => {
+    console.log("here")
+    res.render("missions", {text: "miao"})
+})
+
+app.get('/api/dati', (req, res) => {
+    // Esempio di dati da inviare come risposta
+    console.log("miaos")
+    const dati = {
+      nome: 'John',
+      cognome: 'Doe'
+    };
+  
+    res.json(dati);
+});
 
 
 //const userRouter = require("./routers/users")

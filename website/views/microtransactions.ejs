@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>microtransactions</title>
+  <script src="./javascript/microtransactions.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/card.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/microtransactions.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/popup_yes.css">
+</head>
+<body>
+    <div id =start_overlay>
+        <div id="popup_start">
+            <div id="popup_start_message">
+                REALLY WANT TO BUY AETHERCOIN?
+            </div>
+            <div id="popup_start_buttons">
+                <div id="popup_accept_button">
+                    <div id="popup_accept_button_inner">
+                        YES
+                    </div>
+                </div>
+                <div id="popup_decline_button">
+                    <div onclick="back_on_transaction()" id="popup_decline_button_inner">
+                        NO
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+  <div class ="container">
+    <div class="options">
+        <div class="back_button">
+            <div class="back_button_inner" onclick="go_back()"> BACK </div>     
+        </div>
+        
+    </div>
+    <div class ="micro_cards">
+        <div class="micro_cards_inner">
+            <div id="micro_cards_list">
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+</body>
+</html>

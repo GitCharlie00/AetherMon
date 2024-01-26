@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Battaglia Pokémon</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/missions.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/mission_card.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/monster_card.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/popup_infos.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/popup_list.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/main_monster.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/missions/popup_start.css">
+<script src="./javascript/missions.js"></script>
+</head>
+<body>
+    <div id =start_overlay>
+        <div id="popup_start">
+            <div id="popup_start_message">
+                WANNA START THE MISSION?
+            </div>
+            <div id="popup_start_buttons">
+                <div id="popup_accept_button">
+                    <div id="popup_accept_button_inner">
+                        START
+                    </div>
+                </div>
+                <div id="popup_decline_button">
+                    <div onclick="back_on_start()" id="popup_decline_button_inner">
+                        BACK
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div id =list_overlay>
+        <div id="popup_monsters">
+            <div id="popup_monsters_name">
+                <div id="popup_monsters_back">
+                    <div onclick="close_pop_monster_list()" id="popup_monster_back_inner">
+                        BACK
+                    </div>
+                </div>
+                <div id="popup_monsters_name_inner">
+                    SELECT THE MONSTER FOR THE COMBAT
+                </div>
+            </div>
+            <div id="popup_monsters_list_container">
+                <div id="popup_monsters_list_container_inner">
+                    <div id="popup_monsters_list">
+                    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div id =infos_overlay>
+        <div id="popup_infos">
+        <div id="popup_infos_inner">
+            <div id="popup_infos_name">
+                <div id="popup_infos_name_inner">
+                    Monster Infos
+                </div>
+            </div>
+            <div id="popup_infos_container">
+                <div id="popup_infos_monster">
+                    <div id="popup_infos_monster_stats">
+                        <div id="popup_infos_monster_stats_inner">
+                            <div id="popup_infos_stats_list">
+                                <div class="popup_stats_element">
+                                    <div id ="ps_stat" class="popup_stats_element_inner">ps: 1 </div>
+                                </div>
+                                <div class="popup_stats_element">
+                                    <div id ="attack_stat" class="popup_stats_element_inner">attack: 1 </div>
+                                </div>
+                                <div class="popup_stats_element">
+                                    <div id ="defense_stat" class="popup_stats_element_inner">defense: 1 </div>
+                                </div>
+                                <div class="popup_stats_element">
+                                    <div id ="speed_stat" class="popup_stats_element_inner">speed: 1 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="popup_infos_image_and_moves">
+                        <div id="popup_infos_image">
+                            <div id="popup_infos_image_inner">
+                                <img id="popup_infos_img" src="images/monsters/zoroark.jpg">
+                            </div>
+                        </div>
+                        <div id="popup_infos_moves">
+                            <div id="popup_infos_moves_inner">
+                                <div id="popup_infos_moves_title">
+                                    <div id="popup_infos_moves_title_inner">
+                                        MOVES
+                                    </div>
+                                </div>
+                                <div id="popup_infos_moves_list">
+                                    <div id="popup_infos_moves_list_inner">
+                                    <div class="popup_moves_element">
+                                        <div id ="moves1" class="popup_moves_element_inner">move 1 </div>
+                                    </div>
+                                    <div class="popup_moves_element">
+                                        <div id ="moves2" class="popup_moves_element_inner">move 2 </div>
+                                    </div>
+                                    <div class="popup_moves_element">
+                                        <div id ="moves3" class="popup_moves_element_inner">move 3</div>
+                                    </div>
+                                    <div class="popup_moves_element">
+                                        <div id ="moves4" class="popup_moves_element_inner">move 4 </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="popup_infos_ext">
+                <button onclick="close_pop_infos()"> back </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="red-block">
+            <div class = "infos">
+                <div class="infos_inner">
+                    <div class="infos_inner_inner">
+                        MISSIONS
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="inner_main">
+            <div id ="missions_container">
+            <div id="missions">
+                <div id ="missions_inner">
+            
+                <div class="mission" id="hard_mission">
+                    <div class="mission_container" onclick="select_mission(1)">
+                        <div class="mission_info">
+                            ciao
+                        </div>
+                        <div class="mission_type">
+                        </div>
+                        <div class="mission_difficulty">
+                            <img class="image_difficulty" src="images/missions/hard_difficulty.png"></img>
+                        </div>
+                </div>
+                </div>
+                <div class="mission" id = "normal_mission" >
+                    <div class="mission_container" onclick="select_mission(2)">
+                        <div  class="mission_info">
+                            ciaos
+                        </div>
+                        <div class="mission_type">
+                        </div>
+                        <div class="mission_difficulty">
+                            <img class="image_difficulty" src="images/missions/normal_difficulty.png"></img>
+                        </div>
+                </div>
+            </div>
+            <div class="mission" id = "easy_mission" >
+                <div class="mission_container" onclick="select_mission(3)">
+                    <div class="mission_info">
+                        snao
+                    </div>
+                    <div class="mission_type">
+                    </div>
+                    <div class="mission_difficulty">
+                        <img class="image_difficulty" src="images/missions/easy_difficulty.png"></img>
+                    </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class = "team">
+                <div class = "team_name"> 
+                    Aethermon for the Mission
+                </div>
+                <div class ="monsters_list">
+                    <div class="monster_card_list_slot">
+                        <div class ="monster_card">
+                            <div class="monster_image_container">
+                                <img id="main_monster_image" class="monster_list_image" src="images/monsters/reuniclus.png">
+                            </div>
+                            <div class ="monster_ext">
+                                <div class="monster_infos_card">
+                                    <div class ="type_image_container">
+                                        <img id="main_monster_type" class="type_image_card" src="images/missions/psychic.png">
+                                    </div>
+                                    <div class ="monster_name_card">
+                                        <p id="main_monster_name">Reuniclus</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="monster_options_card">
+                                    <div class="monster_select_card">
+                                        <div class ="monster_select_card_button" onclick="popup_monster_list()"> CHANGE</div>
+                                    </div>
+                                    <div class="monster_info_card">
+                                        <div class ="monster_select_card_button" onclick="popupSelectedMonsterInfos()">INFO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="blue-block">
+            <div class="blue-block_inner">
+                <div class="blue_block_button">
+                    <div id="back_button_inner" class ="blue_block_button_inner">
+                        BACK
+                    </div>
+                </div>
+                <div class="blue_block_button" >
+                    <div id="back_button2" class ="blue_block_button_inner">
+
+                    </div>
+                </div>
+                <div class="blue_block_button">
+                    CHOOSE YOUR DESTINY
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

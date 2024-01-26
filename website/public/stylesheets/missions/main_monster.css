@@ -1,0 +1,141 @@
+.team_name {
+    flex:1;
+    margin:3px;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.monsters_list {
+    flex:5;
+    margin: 4px;
+    width: 77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team {
+    flex:1;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.monster_card_list_slot {
+    display:flex;
+    width: 250px;
+    height: 350px;
+    margin:2px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.monster_card {
+    display:flex;
+    width: 90%;
+    height: 90%;
+    background-image: linear-gradient(to top, rgb(44, 44, 44), white);
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.monster_image_container {
+    display:flex;
+    flex:7;
+    justify-content: center;
+    align-items: center;
+}
+
+.monster_image {
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+.monster_ext {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.type_image_card {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.type_image_container {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.monster_name_card {
+    flex:3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monster_options_card {
+    flex:1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monster_select_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
+.monster_info_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
+.monster_infos_card {
+    flex:1;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.monster_select_card_button {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, rgb(240, 255, 34), rgb(157, 165, 46));
+}
+
+.monster_info_card_button {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>microtransactions</title>
+  <script src="./javascript/monster_creation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/monster_creation/monster_creation.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/monster_creation/popup_yes.css">
+</head>
+<body>
+    <div id =start_overlay>
+        <div id="popup_start">
+            <div id="popup_start_message">
+                REALLY WANT TO HATCH AETHERMON?
+            </div>
+            <div id="popup_start_buttons">
+                <div id="popup_accept_button">
+                    <div onclick="create_monster()" id="popup_accept_button_inner">
+                        YES
+                    </div>
+                </div>
+                <div id="popup_decline_button">
+                    <div onclick="back_on_transaction()" id="popup_decline_button_inner">
+                        NO
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+  <div class ="container">
+    <div class="options">
+        <div class="back_button">
+            <div class="back_button_inner" onclick="go_back()"> BACK </div>     
+        </div>
+        
+    </div>
+    <div class ="main">
+        <div class="main_inner">
+            <div class="main_text">
+                <div class="main_text_inner">
+                    HATCH THE EGG!
+    
+                </div>
+
+            </div>
+        <div class="hatch_image">
+                <div class="hatch_image_inner">
+                    <img src="images/hatching/hatching_egg.gif" class="hatch_img">
+            </div>
+        </div>
+        <div class="hatch_button">
+            <div onclick="popup_hatch_confirm()" class="hatch_button_inner">
+                HATCH!
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
