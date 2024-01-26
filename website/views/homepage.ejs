@@ -1,0 +1,84 @@
+<html>
+<head>
+   <title>Aethermon</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- Include Axios from unpkg CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbs5IXWzq2OrjKy6L4YRPk1F/PRZXYjD/2N9Qh7FqD3gjx2qme3L9S1KoMyn5Pn" crossorigin="anonymous">
+
+    <script src="/javascript/index.js"></script>
+    <script src="/javascript/contract.js"></script>
+
+    <!--<script>visualizzaTransazioni()</script>-->
+</head>
+
+<body  onload="caricaProfilo()";  >
+
+<div class="sezione1">
+   <IMG SRC="/images/logo1.png" HEIGHT=150 WIDTH=330 ALIGN=TEXTTOP>
+
+      <div id="profilo" onclick="toggleMenu">
+         <span id="nomeAccount">Nome dell'Account</span>
+         <ul id="menuTendina" onclick="selezionaOpzione(event)">
+            <li id="logout">Logout</li>
+         </ul>
+      </div>
+
+<div>
+   <div class="box" id="pokemonNumber">
+   <h2>Number of Aethermon:<br><span id="number">number</span></h2>
+      <script>
+         //document.addEventListener('DOMContentLoaded', getMonsterNumber);
+      </script>
+   </div>
+
+   <div class="box" id="totalIncome">
+   <h2>Total income: <br><span id="balance">mybalance</span></h2>
+   <script>
+        // document.addEventListener('DOMContentLoaded', balance);
+   </script>
+   </div>
+
+   <button id="goButton" onclick="goToMarketplace()" >Go to Marketplace</button>
+   <br>
+   <button id="goButton" onclick="play()">Let's play!</button>
+   <br>
+   <label for="buysome">Buy some AECoins:</label>
+   <input type="number" id="wantedCoins" name="buysome" required value = 100>
+   <input type="submit" value="Invia" id="buySomeButton">
+
+</div>
+<div class="myaether" id="aethermons">
+   <h4>My Aethermons</h4>
+
+   <!-- Primo personaggio -->
+   <!--<div class="character">
+     <img src="/images/mostro1.png" alt="Personaggio 1">
+   </div>-->
+</div>
+
+
+</div>
+</div>
+<table id="txrecenti">
+ <thread>
+    <h3>Recent transactions</h3>
+    <tr>
+   <th>Name </th>
+   <th>Order Date</th>
+   <th>Aethermon Name</th>
+   <th>Aethermon Type</th>
+   <th>Cost</th>
+    </tr>
+ </thread>
+ <tbody>
+    <!--risualtati funzione-->
+ </tbody>
+ </table>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.18;
 
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "./Owner.sol";
+//import "./Owner.sol";
 
 contract AEMonsterNFT is ERC721URIStorage{
     //*--------------State variables--------------
@@ -17,11 +17,13 @@ contract AEMonsterNFT is ERC721URIStorage{
         //TODO; type
     }   
 
-    AEMonster[] public monsters;                //All the monsters created so far TODO:Maybe is better replace the use of the array
+    //AEMonster[] public monsters;                //All the monsters created so far TODO:Maybe is better replace the use of the array
 
-
-    mapping (uint256 => AEMonster) private fromIdToMonster;     //Map to get the monster stats from its id
+    mapping (uint256 => AEMonster) private fromIdToMonster;                         //Map to get the monster stats from its id
     mapping (address =>mapping(uint256 => AEMonster)) public monstersOwnedBy;      //Map the monsters owned by an account
+    mapping (address => uint256) public numMonstersOwnedBy;                        //Map the number of monster owned by a player
+    mapping(address => uint256[]) public monsterIdsByAddress;                       //The ids of the monsters owned by an account
+
 
     uint256 private tokenId;                                    //Used to assign unique identifier to each NFT
     uint256 private randomSeed;                                 //Useful for the random number function
@@ -56,11 +58,15 @@ contract AEMonsterNFT is ERC721URIStorage{
         });
             
         //Add the new monster to the collection
-        monsters.push(newMonster);
+        monsterIdsByAddress[player].push(tokenId);
+        //monsters.push(newMonster);
 
         //Map the monster to the owner
-        //?monstersOwnedBy[player].push(tokenId);
         monstersOwnedBy[player][tokenId] = newMonster;
+
+        //Set the number of owned monster for such player
+        numMonstersOwnedBy[player] = numMonstersOwnedBy[player] +1;
+
             
         //*Creation of the effective  NFT
         _mint(player, tokenId);
@@ -78,18 +84,11 @@ contract AEMonsterNFT is ERC721URIStorage{
         AEMonster memory swap = monstersOwnedBy[from][_tokenId];
         delete(monstersOwnedBy[from][_tokenId]);       
         monstersOwnedBy[to][_tokenId] = swap;
+        numMonstersOwnedBy[from] = numMonstersOwnedBy[from] - 1;
+        numMonstersOwnedBy[to] = numMonstersOwnedBy[to] + 1;
+        removeMonsterIdFromOwnership(_tokenId,from);            //Remove the monsters id from the one associated to the from player
+        monsterIdsByAddress[to].push(tokenId);                  //And add it to the other player
     }
-
-    //Function returns the monsters array
-    function getAllMonsters() external view returns (AEMonster[] memory){
-        return monsters;
-    }
-
-    //TODO : change this function 
-    //Returns the id of the monsters owned by an account
-    //function getOwnedMonsters(address player) public view returns (uint256[] memory){
-      //  return monstersOwnedBy[player];
-    //}
 
 
     //Return the monster data given its id
@@ -98,11 +97,51 @@ contract AEMonsterNFT is ERC721URIStorage{
     }
 
 
-    //Funtion to generate random number
+    //Return the monsters owned by a player
+    function getMonstersOwnedBy(address player) public view returns (AEMonster[] memory){
+        AEMonster[] memory result;
+        for(uint256 i = 0;i<monsterIdsByAddress[player].length;i++){    //Loop for all the tokenIds of the owned monsters
+            result[i] = fromIdToMonster[ monsterIdsByAddress[player][i]];
+        }
+        return result;
+    }
+
+
+    //Returns the list of URI of the owned monsters
+    function getMonstersURIOwnedBy(address player)public view returns(string[] memory){
+        string[] memory result;
+        for(uint256 i=0;i<monsterIdsByAddress[player].length;i++){
+            result[i] = tokenURI(monsterIdsByAddress[player][i]);
+        }
+        return result;
+    }
+
+    //Return the URI associated to a monster
+    function getTokenURI(uint256 _tokenId) public view returns (string memory) {
+        return tokenURI(_tokenId);
+    }
+
+    
+    //!Funtion to generate random number
     function random() private view returns (uint256){ 
         //TODO: change this implemantation with the use of chainlink VRF : https://docs.chain.link/vrf
         return ((uint( keccak256(abi.encodePacked (msg.sender, block.timestamp, blockhash(block.number - 1)))))%10)+1;
     }
 
+
+    //Needed when an exchange is performed
+    function removeMonsterIdFromOwnership(uint256 _tokenId, address player) private{
+        uint256 indexToRemove;
+        //Find the index in the array where the element is located
+        for (uint256 i = 0; i < monsterIdsByAddress[player].length; i++) {
+            if (monsterIdsByAddress[player][i] == _tokenId) {
+                indexToRemove = i;
+            }
+        }
+
+        //Perform the remove
+        monsterIdsByAddress[player][indexToRemove] = monsterIdsByAddress[player][monsterIdsByAddress[player].length - 1];
+        monsterIdsByAddress[player].pop();
+    }
 
 }
