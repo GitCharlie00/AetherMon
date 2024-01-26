@@ -1,17 +1,17 @@
 [Claudio]
-Hi everyone folks!!! Few things everyone likes: pizza, travel and Pokemon. Here, we've disproved that, we've come up with a project that makes an ugly version of Pokemon, based on a blockchain infrastructure, with a little dash of artificial intelligence magic. So here is Aethermon, a blockchain-based game in which you can generate and trade your favorite little monsters which can tackle a variety of tasks and missions.
+Hi everyone!!! You know, few things everyone likes: pizza, travels and Pokemon. Here, we've disproved that, we've come up with a project that makes an ugly version of Pokemon, based on a blockchain infrastructure, with a little dash of artificial intelligence magic. So let me present you Aethermon, our blockchain-based game in which you can generate and trade your favorite little monsters which can tackle a variety of tasks and missions.
 
-Let me quickly introduce you to our dream team. 
+So, first of all, let me quickly introduce you to our dream team. 
 
-Nicolo is creativity at the service of everything. 
+We have Nicolo, the creative powerhouse for everything in our group, the one with the artistic and innovative mindset.
 
-Carmelina is our front-end expert. 
+Then Carmelina, that is our front-end expert, a master at crafting visually appealing user interfaces
 
-Mattia, the Solidity smooth operator. 
+From the front-end to the back-end, Mattia excels in Solidity,handling coding tasks without effort, our smooth operator.
 
-Then there's me, Claudio, I work a lot, with a lot of anxiety. 
+Then there's me, Claudio, the AI expert, working alongside Nicolò. I truly enjoy putting in the effort to help the group reach our goals
 
-Last but not least, Nicholas, technique and precision at the service of the team.
+Last but not least, Nicholas. He and Mattia will be our beacons in the realm of back-end.
 
 [Carmelina]
 Our goal is to make a game of AI-generated collectibles. Our little monsters are managed with NFT(so no fungible tokens) that represent the ownership and authenticity of a unique monster, so each monster has its own features.

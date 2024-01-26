@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotta Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="pikachu.png" alt="Pokemon 1" class="me">
+    <div class="pokemon-container bottom-right">
+        <div class="pokemon-info">
+            <h2 id="me-name">Pikachu</h2>
+            <p id="me-level">Livello: 50</p>
+            <div class="pokemon-bar">
+                <div class="pokemon-health" id="me-health" style="width: 80%;"></div> <!-- Imposta la larghezza in base alla salute del Pokémon -->
+            </div>
+            <div class="moves-container">
+                <button class="move-button" id="move-1">Mossa 1</button>
+                <button class="move-button" id="move-2">Mossa 2</button>
+            </div>
+        </div>
+    </div>
+    <img src="charmander.png" alt="Pokemon 2" class="opponent">
+    <div class="pokemon-container top-left">
+        <div class="pokemon-info">
+            <h2 id="opponent-name">Charmander</h2>
+            <p id="opponent-level">Livello: 45</p>
+            <div class="pokemon-bar">
+                <div class="pokemon-health" id="opponent-health" style="width: 60%;"></div> <!-- Imposta la larghezza in base alla salute del Pokémon -->
+            </div>
+        </div>
+    </div>    
+    <script src="battle.js"></script>
+</body>
+</html>
