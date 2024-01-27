@@ -74,3 +74,11 @@ async function selezionaOpzione(event) {
 }
 
 
+function buySomeAEC(){
+  window.location="/microtransactions";
+}
+
+function goToCreation(){
+  window.location="/monster_creation";
+}
+

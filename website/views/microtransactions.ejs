@@ -2,7 +2,10 @@
 <html>
 <head>
   <title>microtransactions</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./javascript/microtransactions.js"></script>
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/card.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/microtransactions.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/microtransactions/popup_yes.css">
@@ -15,7 +18,7 @@
             </div>
             <div id="popup_start_buttons">
                 <div id="popup_accept_button">
-                    <div id="popup_accept_button_inner">
+                    <div id="popup_accept_button_inner" onclick="buyAECoin()">
                         YES
                     </div>
                 </div>
@@ -32,6 +35,7 @@
     <div class="options">
         <div class="back_button">
             <div class="back_button_inner" onclick="go_back()"> BACK </div>     
+            <div><h2>Total income: <br><span id="balance">mybalance</span></h2></div>
         </div>
         
     </div>

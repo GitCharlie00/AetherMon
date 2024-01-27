@@ -1,5 +1,5 @@
 function go_back(){
-    console.log("go back");
+    window.location = "/homepage";
 }
 
 function popup_hatch_confirm(){

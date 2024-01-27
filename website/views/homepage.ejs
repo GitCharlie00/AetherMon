@@ -38,47 +38,26 @@
 
    <div class="box" id="totalIncome">
    <h2>Total income: <br><span id="balance">mybalance</span></h2>
-   <script>
-        // document.addEventListener('DOMContentLoaded', balance);
-   </script>
    </div>
 
+   
+   <button id="goButton" onclick="buySomeAEC()">Buy some AECoins</button>
+   <br>
    <button id="goButton" onclick="goToMarketplace()" >Go to Marketplace</button>
    <br>
    <button id="goButton" onclick="play()">Let's play!</button>
    <br>
-   <label for="buysome">Buy some AECoins:</label>
-   <input type="number" id="wantedCoins" name="buysome" required value = 100>
-   <input type="submit" value="Invia" id="buySomeButton">
+   <button id="goButton" onclick="goToCreation()">Create a new AEtherMon</button>
 
 </div>
 <div class="myaether" id="aethermons">
-   <h4>My Aethermons</h4>
-
-   <!-- Primo personaggio -->
-   <!--<div class="character">
-     <img src="/images/mostro1.png" alt="Personaggio 1">
-   </div>-->
+   <h4>My Aethermons</h4>     <!-- Here will be loaded the AEtherMons of the logged account-->
 </div>
 
 
 </div>
 </div>
-<table id="txrecenti">
- <thread>
-    <h3>Recent transactions</h3>
-    <tr>
-   <th>Name </th>
-   <th>Order Date</th>
-   <th>Aethermon Name</th>
-   <th>Aethermon Type</th>
-   <th>Cost</th>
-    </tr>
- </thread>
- <tbody>
-    <!--risualtati funzione-->
- </tbody>
- </table>
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 $(document).ready(async function() {
-  const web3 = new Web3("http://localhost:7545");
+  const web3 = new Web3(window.ethereum || "http://localhost:7545");
   const gameContractAddress = "0x3CC2b9F2843c4f21DB12C85fcB311B7919d3474D";
   const monsterContractAddress = "0x21e3CC1b881FA5a4A2Ba5a6b77bcB8abCd5ab5d4";
   const gameContractABI= [
@@ -1074,20 +1074,6 @@ $(document).ready(async function() {
     gameContract.methods.coinBalanceOf(currentAccount).call().then((result)=>{
           $("#balance").text(result+ " AEC");
       });
-  }
-
-  //?NOTE: 1Coin = (0.005 / 100 eth) = 0.00005 eth
-  async function buyAECoin(currentAccount,numberOfCoins){
-    const cost = numberOfCoins * 0.00005;
-    const costInWei = web3.utils.toWei(cost.toString(), 'ether');
-    gameContract.methods.purchaseGameCoins(numberOfCoins).send( {from:currentAccount, value:costInWei,gas: '100000',} )
-    .on("confirmation",async ()=>{      //TODO: implementare la giusta gestione degli errori
-        console.log("Pagamento effettuato");  
-        await balance(currentAccount);
-    })
-    .on("error",(error)=>{
-        console.log("Errore nella transazione: ",error);
-    });
   }
 
 
