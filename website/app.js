@@ -31,23 +31,19 @@ app.get("/battle", (req,res) => {
 });
 
 app.get("/monster_creation", (req,res) => {
-    console.log("here")
     res.render("monster_creation", {text: "miao"})
 })
 
 app.get("/microtransactions", (req,res) => {
-    console.log("here")
     res.render("microtransactions", {text: "miao"})
 })
 
 app.get("/missions", (req,res) => {
-    console.log("here")
     res.render("missions", {text: "miao"})
 })
 
 app.get('/api/dati', (req, res) => {
     // Esempio di dati da inviare come risposta
-    console.log("miaos")
     const dati = {
       nome: 'John',
       cognome: 'Doe'
@@ -57,10 +53,6 @@ app.get('/api/dati', (req, res) => {
 });
 
 
-//const userRouter = require("./routers/users")
-
-//app.use("/users", userRouter)
-
 app.listen(port,()=>{
-    console.log("App in ascolto su "+port);
+    console.log("App listening on port "+port);
 });

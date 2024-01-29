@@ -9,7 +9,6 @@ scale = 10
 n_samples = 1
 
 # Inizializza il modello di generazione delle immagini
-# Assicurati di sostituire questa parte con la tua logica di inizializzazione del modello
 def initialize_model():
     pipe = StableDiffusionPipeline.from_pretrained("lambdalabs/sd-pokemon-diffusers", torch_dtype=torch.float16)
     pipe = pipe.to("cuda")
