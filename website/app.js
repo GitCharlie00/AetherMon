@@ -2,10 +2,19 @@ const http = require('http')
 const fs = require('fs')
 const express = require('express')
 var path = require('path')
+const cors = require('cors');
 var dotenv = require('dotenv')
 const app = express()
 const port = 3000
 
+const corsOptions = {
+    origin: 'http://localhost:500',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+
+app.use(cors(corsOptions));
 
 dotenv.config();
 

@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Monster Creation</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./javascript/monster_creation.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/stylesheets/monster_creation/monster_creation.css">
@@ -15,7 +17,7 @@
             </div>
             <div id="popup_start_buttons">
                 <div id="popup_accept_button">
-                    <div onclick="create_monster()" id="popup_accept_button_inner">
+                    <div  id="popup_accept_button_inner">
                         YES
                     </div>
                 </div>
@@ -32,6 +34,10 @@
     <div class="options">
         <div class="back_button">
             <div class="back_button_inner" onclick="go_back()"> BACK </div>     
+        </div>
+
+        <div class="balance_option">   
+            <div><h2>Total income: <br><span id="balance">mybalance</span></h2></div>
         </div>
         
     </div>

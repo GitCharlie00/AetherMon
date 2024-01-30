@@ -1116,56 +1116,5 @@ $(document).ready(async function() {
   }
 
 
-
-  //!Da rimuovere
-  const pinataApiKey = "3c6fb7a964bfd8ce82ff"
-  const pinataSecret = "c4b81195a80aa3d9d6e6fd061fbc281c1d2fa3f5f9780f91edcb7874881c7236"
-
-
-    //?The functionalities needed to interact with IPFS
-  const uploadFile = async () => {
-
-    const src = "/images/mostro1.png";
-
-    // Utilizza Fetch per ottenere i byte dell'immagine
-    const response = await fetch(src);
-    const fileBuffer = await response.arrayBuffer();
-    const fileBlob = new Blob([fileBuffer]);
-    const fileName = "OwnerAddr+TokenID";
-    const fileWithOptions = new File([fileBlob], fileName, { type: fileBlob.type });
-
-    //const pinataMetadata = JSON.stringify({
-      //owner: 'Mattia Russo',
-    //});
-
-    const formData = new FormData();
-
-    
-    formData.append("file", fileWithOptions);
-    //formData.append('pinataMetadata', pinataMetadata);
-
-    const config = {
-      method: "POST",
-      maxContentLength: Infinity,
-      headers: {
-        pinata_api_key: pinataApiKey,
-        pinata_secret_api_key: pinataSecret,
-      },
-      body: formData,
-    };
-
-    try {
-
-      const response = await fetch("https://api.pinata.cloud/pinning/pinFileToIPFS", config);
-
-      const data = await response.json();
-
-      console.log("IpfsHash: "+data.IpfsHash);
-      //return data.IpfsHash as string;
-      } catch (error) {
-        console.log(error);
-	  }
-  };
-
 });
 

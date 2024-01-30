@@ -9,6 +9,14 @@ const path = require('path');
 //Used for the name of the tmp images
 const crypto = require('crypto');
 
+// Middleware per consentire l'accesso da qualsiasi origine
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 //Needed for the api_token
 require('dotenv').config()
 
@@ -24,7 +32,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", async (req,res) =>{
   //TODO: implementare scelta casuale del prompt : animale + descrizioneù
-  var prompt = "muscolar frog controlling smoke on fire";     //! esempio da sostituire
+  var prompt = "water binturong";     //! esempio da sostituire
 
   var output = await replicate.run(     //Make the call to the AI generative model
     "lambdal/text-to-pokemon:ff6cc781634191dd3c49097a615d2fc01b0a8aae31c448e55039a04dcbf36bba",
@@ -45,7 +53,10 @@ app.get("/", async (req,res) =>{
    
   res.set('Content-Type', 'image/jpeg');            //Set the response type
   
-  res.sendFile(filename+'.jpg', { root: path.join(__dirname) }, (err) => {
+  res.set('filename', filename+'.png');
+  res.set('Access-Control-Expose-Headers', 'filename');
+  
+  res.sendFile(filename+'.png', { root: path.join(__dirname) }, (err) => {
     if (err) {
       console.error('Errore nell\'invio del file:', err);
       res.status(500).send('Errore interno del server');
@@ -83,7 +94,7 @@ async function save_image(imageURL) {
 async function createFile(filename,imageURL){
   try {
     const response = await axios.get(imageURL, { responseType: 'stream' });
-    const writeStream = fs.createWriteStream(filename + '.jpg');
+    const writeStream = fs.createWriteStream(filename + '.png');
 
     // Utilizza il metodo di promessa per aspettare che la pipe venga completata
     await new Promise((resolve, reject) => {
@@ -111,7 +122,7 @@ async function createFile(filename,imageURL){
 
 
 function delete_image(filename){
-  fs.unlink(filename+'.jpg', (err) => {
+  fs.unlink(filename+'.png', (err) => {
     if (err) {
       console.error('Errore durante la cancellazione del file:', err);
       return;
