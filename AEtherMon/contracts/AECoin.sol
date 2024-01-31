@@ -3,9 +3,8 @@ pragma solidity ^0.8.18;
 
 
 import "../node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "./Owner.sol";
 
-contract AECoinFT is ERC20Burnable,Owner{
+contract AECoinFT is ERC20Burnable{
     //*--------------State variables--------------
     uint8 private reward;                                       //The number of token received as reward at the end of a battle
 

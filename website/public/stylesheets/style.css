@@ -203,6 +203,9 @@ button {
     padding: 20px;
     border: 1px solid #ccc;
     background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .character {
@@ -217,4 +220,15 @@ button {
   .character img {
     width: 100%;
     height: auto;
+  }
+
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    color:#000;
+    text-align: center;
+  }
+
+  .modal-body .character{
+    margin: auto;
   }

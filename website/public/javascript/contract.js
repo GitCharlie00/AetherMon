@@ -1,7 +1,7 @@
 $(document).ready(async function() {
   const web3 = new Web3(window.ethereum || "http://localhost:7545");
-  const gameContractAddress = "0x3CC2b9F2843c4f21DB12C85fcB311B7919d3474D";
-  const monsterContractAddress = "0x21e3CC1b881FA5a4A2Ba5a6b77bcB8abCd5ab5d4";
+  const gameContractAddress = "0xAdFEd37eE4ea9FE59690e1D51863Be887acaC993";
+  const monsterContractAddress = "0x3682Ba413Cb4Ee3F5288E30cC00bbaBa8fe485dA";
   const gameContractABI= [
     {
       "inputs": [],
@@ -1044,6 +1044,7 @@ $(document).ready(async function() {
 
   const gameContract = new web3.eth.Contract(gameContractABI,gameContractAddress);      //The contract objects
   const monsterContract = new web3.eth.Contract(monsterContractABI,monsterContractAddress);
+  const pinataGatewayToken = "G83CiLljLnCGugjxSAoseEaAMBUeOMdRy8o4hUxhi7bVYNqOxDt0G-k8Y9TuBW31";
   var currentAccount;    
 
   load();
@@ -1082,10 +1083,13 @@ $(document).ready(async function() {
     monsterContract.methods.getMonstersOwnedBy(currentAccount).call().then(monsters=>{
       $("#number").text(monsters.length);       //Update the number of monsters layout
       if(monsters.length != 0){
-        monstersContract.methods.getMonstersURIOwnedBy(currentAccount).call().then(monstersURI=>{   //Load URL to the images
+        monsterContract.methods.getMonstersURIOwnedBy(currentAccount).call().then(monstersURI=>{   //Load URL to the images
           
           for(let i =0;i<monsters.length;i++){    //Load the monsters in the layout
-            var $newDiv = $("<div class='character'><img src='"+monstersURI[i]+" data-bs-toggle='modal' data-bs-target='#modal'"+i+"></div>");
+
+            var imageURL = monstersURI[i]+"?pinataGatewayToken="+pinataGatewayToken;
+            var $newDiv = $("<div class='character'><img src='"+imageURL+"' data-bs-toggle='modal' data-bs-target='#modal"+i+"'></div>");
+
             var $modalObject = $(
               '<div class="modal fade" id="modal'+i+'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
                 '<div class="modal-dialog">' +
@@ -1094,9 +1098,32 @@ $(document).ready(async function() {
                       '<h5 class="modal-title" >Info</h5>' +
                       '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
                     '</div>' +
-                    '<div class="modal-body">' +
-                      '<img src="'+monstersURI[i]+'" alt="Immagine" class="img-fluid">' +
-                      '<!-- Inserire i dati del mostro qui -->' +
+                    '<div class="modal-body container">' +
+                      '<div class="character"><img src="'+imageURL+'" alt="Immagine" class="img-fluid"></div>' +
+                      '<div class="monster-data row">' +
+                          '<div class="data-item col">'+
+                              'HP : '+monsters[i].HP+
+                          '</div>'+
+                          '<div class="data-item col">'+
+                              'AP : '+monsters[i].AP+
+                          '</div>'+
+                      '</div>'+
+
+                      '<div class="monster-data row">' +
+                        '<div class="data-item col">'+
+                            'DP : '+monsters[i].DP+
+                        '</div>'+
+                        '<div class="data-item col">'+
+                            'SP : '+monsters[i].SP+
+                        '</div>'+
+                      '</div>'+
+
+                      '<div class="monster-data row">' +
+                        '<div class="data-item col">'+
+                            'Level : '+monsters[i].level+
+                        '</div>'+
+                      '</div>'+
+
                     '</div>' +
                     '<div class="modal-footer">' +
                       '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>' +
@@ -1105,12 +1132,15 @@ $(document).ready(async function() {
                 '</div>' +
               '</div>'
             );
+            
             var $montersDiv = $("#aethermons");
             $montersDiv.append($newDiv);
             $montersDiv.append($modalObject);
+            
           }
 
-        }); 
+        });
+
       }
     });
   }

@@ -2,273 +2,273 @@ $(document).ready(async function() {
     const monsterGenerationURL = "http://localhost:5000";
     const gameContractABI= [
         {
-        "inputs": [],
-        "stateMutability": "nonpayable",
-        "type": "constructor"
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
         },
         {
-        "anonymous": false,
-        "inputs": [
+          "anonymous": false,
+          "inputs": [
             {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "indexed": false,
-            "internalType": "address",
-            "name": "seller",
-            "type": "address"
+              "indexed": false,
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
             },
             {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
             }
-        ],
-        "name": "NewOnSale",
-        "type": "event"
+          ],
+          "name": "NewOnSale",
+          "type": "event"
         },
         {
-        "anonymous": false,
-        "inputs": [
+          "anonymous": false,
+          "inputs": [
             {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "indexed": false,
-            "internalType": "address",
-            "name": "seller",
-            "type": "address"
+              "indexed": false,
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
             }
-        ],
-        "name": "Retired",
-        "type": "event"
+          ],
+          "name": "Retired",
+          "type": "event"
         },
         {
-        "anonymous": false,
-        "inputs": [
+          "anonymous": false,
+          "inputs": [
             {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "indexed": false,
-            "internalType": "address",
-            "name": "seller",
-            "type": "address"
+              "indexed": false,
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
             },
             {
-            "indexed": false,
-            "internalType": "address",
-            "name": "buyer",
-            "type": "address"
+              "indexed": false,
+              "internalType": "address",
+              "name": "buyer",
+              "type": "address"
             }
-        ],
-        "name": "Selled",
-        "type": "event"
+          ],
+          "name": "Selled",
+          "type": "event"
         },
         {
-        "inputs": [],
-        "name": "AECoinContractAddress",
-        "outputs": [
+          "inputs": [],
+          "name": "AECoinContractAddress",
+          "outputs": [
             {
-            "internalType": "contract AECoinFT",
-            "name": "",
-            "type": "address"
+              "internalType": "contract AECoinFT",
+              "name": "",
+              "type": "address"
             }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "constant": true
         },
         {
-        "inputs": [],
-        "name": "AEMonsterContract",
-        "outputs": [
+          "inputs": [],
+          "name": "AEMonsterContract",
+          "outputs": [
             {
-            "internalType": "contract AEMonsterNFT",
-            "name": "",
-            "type": "address"
+              "internalType": "contract AEMonsterNFT",
+              "name": "",
+              "type": "address"
             }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "constant": true
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             }
-        ],
-        "name": "buyOnSaleMonster",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "name": "buyOnSaleMonster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "internalType": "uint256",
-            "name": "newPrice",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "newPrice",
+              "type": "uint256"
             }
-        ],
-        "name": "changePrince",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "name": "changePrince",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             }
-        ],
-        "name": "leaveFromSale",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "name": "leaveFromSale",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-        "inputs": [],
-        "name": "owner",
-        "outputs": [
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
             {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+              "internalType": "address",
+              "name": "",
+              "type": "address"
             }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "constant": true
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
             }
-        ],
-        "name": "putOnSale",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "name": "putOnSale",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+              "internalType": "address",
+              "name": "",
+              "type": "address"
             },
             {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             }
-        ],
-        "name": "sellingMap",
-        "outputs": [
+          ],
+          "name": "sellingMap",
+          "outputs": [
             {
-            "internalType": "address",
-            "name": "seller",
-            "type": "address"
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
             },
             {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
             },
             {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
             }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "constant": true
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "uint256",
-            "name": "numberOfCoins",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "numberOfCoins",
+              "type": "uint256"
             }
-        ],
-        "name": "purchaseGameCoins",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function",
-        "payable": true
+          ],
+          "name": "purchaseGameCoins",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function",
+          "payable": true
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "address",
-            "name": "player",
-            "type": "address"
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
             }
-        ],
-        "name": "coinBalanceOf",
-        "outputs": [
+          ],
+          "name": "coinBalanceOf",
+          "outputs": [
             {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             }
-        ],
-        "stateMutability": "view",
-        "type": "function",
-        "constant": true
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "constant": true
         },
         {
-        "inputs": [
+          "inputs": [
             {
-            "internalType": "string",
-            "name": "tokenURI",
-            "type": "string"
+              "internalType": "string",
+              "name": "tokenURI",
+              "type": "string"
             }
-        ],
-        "name": "buyNewMonster",
-        "outputs": [
+          ],
+          "name": "buyNewMonster",
+          "outputs": [
             {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
         }
-    ];
-    const gameContractAddress = "0x3CC2b9F2843c4f21DB12C85fcB311B7919d3474D"; 
+      ];
+    const gameContractAddress = "0xAdFEd37eE4ea9FE59690e1D51863Be887acaC993"; 
     const web3 = new Web3(window.ethereum || "http://localhost:7545");
     const gameContract = new web3.eth.Contract(gameContractABI,gameContractAddress);
     var userBalance;

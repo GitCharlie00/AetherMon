@@ -99,7 +99,7 @@ contract AEMonsterNFT is ERC721URIStorage{
 
     //Return the monsters owned by a player
     function getMonstersOwnedBy(address player) public view returns (AEMonster[] memory){
-        AEMonster[] memory result;
+        AEMonster[] memory result = new AEMonster[](monsterIdsByAddress[player].length);
         for(uint256 i = 0;i<monsterIdsByAddress[player].length;i++){    //Loop for all the tokenIds of the owned monsters
             result[i] = fromIdToMonster[ monsterIdsByAddress[player][i]];
         }
@@ -109,7 +109,7 @@ contract AEMonsterNFT is ERC721URIStorage{
 
     //Returns the list of URI of the owned monsters
     function getMonstersURIOwnedBy(address player)public view returns(string[] memory){
-        string[] memory result;
+        string[] memory result = new string[](monsterIdsByAddress[player].length);
         for(uint256 i=0;i<monsterIdsByAddress[player].length;i++){
             result[i] = tokenURI(monsterIdsByAddress[player][i]);
         }
