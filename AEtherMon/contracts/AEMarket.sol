@@ -11,6 +11,7 @@ contract AEMarket{
     mapping(address => mapping(uint256 => OnSaleMonster)) public sellingMap;        //It defines the on sale monster for each player                     
     mapping(uint256 => OnSaleMonster) sellingList;                                  //All the monster on sale state
     mapping(uint256 => bool) private isOnSale;                                       //Allows better performance (avoid search in the array)
+    uint256[] public sellingIds;                                                     //Identify the selling monsters id
 
     AECoinFT public AECoinContractAddress;                        
     AEMonsterNFT public AEMonsterContract; 
@@ -64,42 +65,77 @@ contract AEMarket{
     //*--------------Main functionalities--------------
 
     //Function to sell a AEthermon   
-    function putOnSale(uint256 tokenId, uint256 price) 
-    external notOnSale(tokenId) onlyOwner(tokenId, msg.sender) priceNotBelowZero(price){ 
-        sellingMap[msg.sender][tokenId] = OnSaleMonster(msg.sender,tokenId,price);
-        sellingList[tokenId] = OnSaleMonster(msg.sender,tokenId,price);
-        isOnSale[tokenId] = true;
-
-        emit NewOnSale(tokenId, msg.sender, price);
+    function putOnSale(uint256 _tokenId, uint256 price) 
+    external notOnSale(_tokenId) onlyOwner(_tokenId, msg.sender) priceNotBelowZero(price){ 
+        sellingMap[msg.sender][_tokenId] = OnSaleMonster(msg.sender,_tokenId,price);
+        sellingList[_tokenId] = OnSaleMonster(msg.sender,_tokenId,price);
+        isOnSale[_tokenId] = true;
+        sellingIds.push(_tokenId);
+         
+        emit NewOnSale(_tokenId, msg.sender, price);
     }
 
     //Function to retire a monster from the on sale status
-    function leaveFromSale(uint256 tokenId)
-    external onSale(tokenId) onlyOwner(tokenId,msg.sender){
-        delete(sellingMap[msg.sender][tokenId]);
-        delete(sellingList[tokenId]);
-        isOnSale[tokenId] = false;
+    function leaveFromSale(uint256 _tokenId)
+    external onSale(_tokenId) onlyOwner(_tokenId,msg.sender){
+        delete(sellingMap[msg.sender][_tokenId]);
+        delete(sellingList[_tokenId]);
+        isOnSale[_tokenId] = false;
+        removeMonsterIdsFromSelling(_tokenId);
 
-        emit Retired(tokenId,msg.sender);
+        emit Retired(_tokenId,msg.sender);
+    }
+
+    function removeMonsterIdsFromSelling(uint256 _tokenId) private{
+        uint256 indexToRemove;
+        //Find the index in the array where the element is located
+        for (uint256 i = 0; i < sellingIds.length; i++) {
+            if (sellingIds[i] == _tokenId) {
+                indexToRemove = i;
+            }
+        }
+        //Perform the remove
+        sellingIds[indexToRemove] = sellingIds[sellingIds.length - 1];
+        sellingIds.pop();
     }
 
     //Function to change the price of an on sale AEthermon
-    function changePrince(uint256 tokenId, uint256 newPrice)
-    external onSale(tokenId) onlyOwner(tokenId,msg.sender) priceNotBelowZero(newPrice){
-        sellingMap[msg.sender][tokenId].price = newPrice;
-        sellingList[tokenId].price = newPrice;
+    function changePrince(uint256 _tokenId, uint256 newPrice)
+    external onSale(_tokenId) onlyOwner(_tokenId,msg.sender) priceNotBelowZero(newPrice){
+        sellingMap[msg.sender][_tokenId].price = newPrice;
+        sellingList[_tokenId].price = newPrice;
         
-        emit NewOnSale(tokenId, msg.sender, newPrice); 
+        emit NewOnSale(_tokenId, msg.sender, newPrice); 
     }
 
     //Function to buy a monster on sale
-    function buyOnSaleMonster(uint256 tokenId)
-    external onSale(tokenId) hasEnoughMoney(msg.sender,tokenId){
+    function buyOnSaleMonster(uint256 _tokenId)
+    external onSale(_tokenId) hasEnoughMoney(msg.sender,_tokenId){
         //Send the coins from buyer to seller
-        AECoinContractAddress.transferCoinsFrom(msg.sender, sellingList[tokenId].seller, sellingList[tokenId].price);
+        AECoinContractAddress.transferCoinsFrom(msg.sender, sellingList[_tokenId].seller, sellingList[_tokenId].price);
         //Define the transfer of the monster
-        AEMonsterContract.transferMonster(sellingList[tokenId].seller,msg.sender,tokenId);
-        emit Selled(tokenId, sellingList[tokenId].seller, msg.sender);
+        AEMonsterContract.transferMonster(sellingList[_tokenId].seller,msg.sender,_tokenId);
+
+        //Once the monster is sold, remove it from te selling list
+        delete(sellingMap[sellingList[_tokenId].seller][_tokenId]);
+        delete(sellingList[_tokenId]);
+        isOnSale[_tokenId] = false;
+        removeMonsterIdsFromSelling(_tokenId);
+
+        emit Selled(_tokenId, sellingList[_tokenId].seller, msg.sender);
+    }
+
+
+    //Function to get the monsters on sale
+    function getOnSaleMonsters()
+    external view returns(OnSaleMonster[] memory){
+        OnSaleMonster[] memory result = new OnSaleMonster[](sellingIds.length);
+        
+        for(uint256 i = 0;i<sellingIds.length;i++){
+            result[i] = sellingList[sellingIds[i]];
+        }
+
+        return result;
     }
     
 }
