@@ -1,8 +1,8 @@
 $(document).ready(async function() {
   const web3 = new Web3(window.ethereum || "http://localhost:7545");
-  const gameContractAddress = "0xAdFEd37eE4ea9FE59690e1D51863Be887acaC993";
-  const monsterContractAddress = "0x3682Ba413Cb4Ee3F5288E30cC00bbaBa8fe485dA";
-  const gameContractABI= [
+  const gameContractAddress = "0xf4a0a5C6961cA63F5A7C16A0c075a1a7D1ae600D";
+  const monsterContractAddress = "0x901A4B3755a722904Bd201ABCf7bc8BaB280cB37";
+  const gameContractABI=  [
     {
       "inputs": [],
       "stateMutability": "nonpayable",
@@ -109,7 +109,7 @@ $(document).ready(async function() {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenId",
+          "name": "_tokenId",
           "type": "uint256"
         }
       ],
@@ -122,7 +122,7 @@ $(document).ready(async function() {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenId",
+          "name": "_tokenId",
           "type": "uint256"
         },
         {
@@ -137,10 +137,41 @@ $(document).ready(async function() {
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "getOnSaleMonsters",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "seller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct AEMarket.OnSaleMonster[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenId",
+          "name": "_tokenId",
           "type": "uint256"
         }
       ],
@@ -167,7 +198,7 @@ $(document).ready(async function() {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "tokenId",
+          "name": "_tokenId",
           "type": "uint256"
         },
         {
@@ -180,6 +211,26 @@ $(document).ready(async function() {
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "sellingIds",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -1046,6 +1097,7 @@ $(document).ready(async function() {
   const monsterContract = new web3.eth.Contract(monsterContractABI,monsterContractAddress);
   const pinataGatewayToken = "G83CiLljLnCGugjxSAoseEaAMBUeOMdRy8o4hUxhi7bVYNqOxDt0G-k8Y9TuBW31";
   var currentAccount;    
+
 
   load();
 

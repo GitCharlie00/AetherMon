@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Aethermon</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="/stylesheets/market.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/javascript/market.js"></script>
+
+    
+</head>
+
+<body style=" background-image: url('sfondo.png');">
+     <h1>Aethermon Marketplace</h1>
+
+     <button id="sellButton" onclick="sellWind()">I want to sell!</button>
+
+     <div  id="products"  class="product-container">
+
+     
+    </div>
+
+    <dialog id="myModal" class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="" alt="Immagine del prodotto">
+        <p id="modalDescription"></p>
+        <p id="modalPrice"></p>
+        <button onclick="sureToBuy()">Buy</button>
+    </dialog>
+
+    <dialog id="confirmModal" class="confirmModal-content">
+    <p> Are you sure you want to buy it?</p>
+    <button onclick=closeModal()>NO</button>
+    <button onclick="buy()">YES</button>
+    </dialog>
+
+    <dialog id="sellModal" class="sellModal">
+        <div class="sellModal-content">
+        <span class="close" onclick="closesellModal()">&times;</span>
+        <h1>My Aethermons</h1>
+        <div id="myAEthermons" class="product-container">
+
+        </div>
+        
+    </dialog>
+
+</body>
+
+</html>

@@ -82,3 +82,7 @@ function goToCreation(){
   window.location="/monster_creation";
 }
 
+function goToMarketplace(){
+  window.location = "/market";
+}
+

@@ -1,5 +1,5 @@
 const web3 = new Web3(window.ethereum ||"http://localhost:7545");
-const gameContractABI= [
+const gameContractABI=  [
   {
     "inputs": [],
     "stateMutability": "nonpayable",
@@ -106,7 +106,7 @@ const gameContractABI= [
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId",
+        "name": "_tokenId",
         "type": "uint256"
       }
     ],
@@ -119,7 +119,7 @@ const gameContractABI= [
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId",
+        "name": "_tokenId",
         "type": "uint256"
       },
       {
@@ -134,10 +134,41 @@ const gameContractABI= [
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getOnSaleMonsters",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct AEMarket.OnSaleMonster[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId",
+        "name": "_tokenId",
         "type": "uint256"
       }
     ],
@@ -164,7 +195,7 @@ const gameContractABI= [
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId",
+        "name": "_tokenId",
         "type": "uint256"
       },
       {
@@ -177,6 +208,26 @@ const gameContractABI= [
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sellingIds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -267,7 +318,7 @@ const gameContractABI= [
     "type": "function"
   }
 ];
-const gameContractAddress = "0xAdFEd37eE4ea9FE59690e1D51863Be887acaC993";
+const gameContractAddress = "0xf4a0a5C6961cA63F5A7C16A0c075a1a7D1ae600D";
 const gameContract = new web3.eth.Contract(gameContractABI,gameContractAddress); 
 
 
