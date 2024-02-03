@@ -87,7 +87,7 @@ contract AEMonsterNFT is ERC721URIStorage{
         numMonstersOwnedBy[from] = numMonstersOwnedBy[from] - 1;
         numMonstersOwnedBy[to] = numMonstersOwnedBy[to] + 1;
         removeMonsterIdFromOwnership(_tokenId,from);            //Remove the monsters id from the one associated to the from player
-        monsterIdsByAddress[to].push(tokenId);                  //And add it to the other player
+        monsterIdsByAddress[to].push(_tokenId);                  //And add it to the other player
     }
 
 
