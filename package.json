@@ -1,0 +1,36 @@
+{
+  "name": "aethermon",
+  "version": "1.0.0",
+  "description": "Aehtermon project for BLTDs course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitCharlie00/AetherMon.git#main"
+  },
+  "keywords": [
+    "ETH",
+    "Aethermon",
+    "Blockchain",
+    "Solidity",
+    "JS"
+  ],
+  "author": "Claudio Schiavella, Mattia Russo, Carmelina De Lauso, Nicolo Dentale, Nicholas Urbanelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitCharlie00/AetherMon/issues"
+  },
+  "homepage": "https://github.com/GitCharlie00/AetherMon/tree/main#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "replicate": "^0.25.2"
+  }
+}
