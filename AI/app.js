@@ -9,6 +9,25 @@ const path = require('path');
 //Used for the name of the tmp images
 const crypto = require('crypto');
 
+// Elements to compose the prompt to generate the Aethermon
+const animals = [
+  "Elephant","Lion","Tiger","Giraffe","Zebra","Kangaroo","Koala",
+  "Penguin","Panda","Dolphin","Horse","Dog","Cat","Rabbit","Monkey",
+  "Gorilla","Chimpanzee","Squirrel","Fox","Bear", "Binturong", "Capybara"
+];
+
+const elements = [
+  "Fire","Water","Grass","Electric","Ground","Rock","Ice","Psychic","Dark",
+  "Fighting","Flying","Poison","Bug","Ghost","Steel","Dragon","Fairy",
+  "Normal","Ice","Electric"
+];
+
+const adjectives = [
+  "Happy","Sunny","Brilliant","Clever","Lively","Gentle","Vibrant","Graceful",
+  "Mysterious","Cheerful","Energetic","Adventurous","Witty","Charming","Radiant",
+  "Enchanting","Playful","Captivating","Soothing","Majestic"
+];
+
 // Middleware per consentire l'accesso da qualsiasi origine
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -32,7 +51,12 @@ app.set('view engine', 'ejs');
 
 app.get("/", async (req,res) =>{
   //TODO: implementare scelta casuale del prompt : animale + descrizioneù
-  var prompt = "water binturong";     //! esempio da sostituire
+  // var prompt = "water binturong";     //! esempio da sostituire
+  var selectedAnimal = getRandomElement(animals);
+  var selectedElement = getRandomElement(elements);
+  var selectedAdjective = getRandomElement(adjectives);
+
+  var prompt = `${selectedAdjective} ${selectedAnimal} of ${selectedElement}!`;
 
   var output = await replicate.run(     //Make the call to the AI generative model
     "lambdal/text-to-pokemon:ff6cc781634191dd3c49097a615d2fc01b0a8aae31c448e55039a04dcbf36bba",
@@ -72,7 +96,7 @@ app.get("/", async (req,res) =>{
 
 
 
-// Avvia il server che ascolta sulla porta specificata
+// Starts the server listening on the specified port
 app.listen(port, () => {
   console.log(`Generative script listening on ${port}`);
 });
@@ -119,7 +143,10 @@ async function createFile(filename,imageURL){
 }
 */
 
-
+function getRandomElement(list) {
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
 
 function delete_image(filename){
   fs.unlink(filename+'.png', (err) => {
