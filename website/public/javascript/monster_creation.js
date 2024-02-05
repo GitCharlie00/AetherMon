@@ -70,7 +70,6 @@ $(document).ready(async function() {
     const pinataApiKey = "3c6fb7a964bfd8ce82ff"
     const pinataSecret = "c4b81195a80aa3d9d6e6fd061fbc281c1d2fa3f5f9780f91edcb7874881c7236"
 
-
     //?The functionalities needed to interact with IPFS
     async function uploadFileIPFS(imageData,filename){
         //const imageBuffer = new Uint8Array(imageData);

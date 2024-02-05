@@ -711,7 +711,7 @@
   "sourceMap": "153:519:4:-:0;;;207:52;;;;;;;;;-1:-1:-1;232:6:4;:19;;-1:-1:-1;;;;;;232:19:4;241:10;232:19;;;153:519;;;;;;",
   "deployedSourceMap": "153:519:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;413:90;462:7;489:6;413:90;;;-1:-1:-1;;;;;489:6:4;;;160:51:24;;413:90:4;;;;;148:2:24;413:90:4;;;563:106;;;;;;:::i;:::-;;:::i;:::-;;;320:6;;-1:-1:-1;;;;;320:6:4;306:10;:20;298:87;;;;-1:-1:-1;;;298:87:4;;715:2:24;298:87:4;;;697:21:24;754:2;734:18;;;727:30;793:34;773:18;;;766:62;-1:-1:-1;;;844:18:24;;;837:52;906:19;;298:87:4;;;;;;;;644:6:::1;:17:::0;;-1:-1:-1;;;;;;644:17:4::1;-1:-1:-1::0;;;;;644:17:4;;;::::1;::::0;;;::::1;::::0;;563:106::o;222:286:24:-;281:6;334:2;322:9;313:7;309:23;305:32;302:52;;;350:1;347;340:12;302:52;376:23;;-1:-1:-1;;;;;428:31:24;;418:42;;408:70;;474:1;471;464:12;408:70;497:5;222:286;-1:-1:-1;;;222:286:24:o",
   "source": "// SPDX-License-Identifier: MIT \r\npragma solidity ^0.8.18;\r\n\r\n//A contract to define a modifier for actions callable only by the owner of the contract \r\ncontract Owner{\r\n\r\n    address private _owner;\r\n\r\n    constructor() {\r\n        _owner = msg.sender;\r\n    }\r\n\r\n    modifier onlyOwner(){\r\n        require(msg.sender == _owner, \"Only the owner of this contract can call this function\");\r\n        _;\r\n    }\r\n\r\n    function getOwner() public view virtual returns (address) {\r\n        return _owner;\r\n    }\r\n\r\n    //*Usefull in case a change of owner is needed\r\n    function transferOwnership(address newOwner) public virtual onlyOwner {\r\n        _owner = newOwner;\r\n    }\r\n}",
-  "sourcePath": "C:\\Users\\HP\\Desktop\\Università\\Magistrale\\2 anno\\1 Semestre\\Blockchain & DLT\\Progetto\\src\\AEtherMon\\contracts\\Owner.sol",
+  "sourcePath": "C:\\Users\\cschi\\Desktop\\Scuola\\Magistrale\\Secondo Anno\\Primo Semestre\\Blockchain and DLTs\\Progetto\\AetherMon\\AEtherMon\\contracts\\Owner.sol",
   "ast": {
     "absolutePath": "project:/contracts/Owner.sol",
     "exportedSymbols": {
@@ -1235,7 +1235,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-02-01T19:25:07.280Z",
+  "updatedAt": "2024-02-03T15:45:33.377Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
