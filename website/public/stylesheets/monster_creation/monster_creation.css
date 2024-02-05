@@ -2,6 +2,8 @@ body, html {
     height: 100%;
     margin: 0;
     background-image: linear-gradient(to bottom, blue, white);
+    transition: opacity 0.5s ease;
+    
 }
 
 .container {

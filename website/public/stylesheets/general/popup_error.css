@@ -1,0 +1,52 @@
+#error_overlay {
+    position:fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#popup_error {
+    height: 30%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#popup_error_message{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup_error_buttons{
+    flex:2;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#popup_error_button{
+    flex:1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup_error_button_inner{
+    height: 40%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(118, 255, 50), rgb(255, 255, 255));
+}

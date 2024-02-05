@@ -19,26 +19,51 @@ class Mission {
     }
 }
 
-const remaining_hard_missions = 3;
-const remaining_normal_missions = 3;
-const remaining_easy_missions = 3;
+let actual_first_monster_index = 0
+let monsters_list = [];
 
-let actual_first_monster_index = 0;
-
-monsters_list = [];
-
-const monster2 = new Monster(50, 70, 40, 90, 2, [15, 1], 'reshiram', 'Ash', 'images/monsters/reshiram.jpg');
-monsters_list.push(monster2);
-
-const monster1 = new Monster(50, 70, 40, 90, 2, [15, 1], 'zekrom', 'Ash', 'images/monsters/zekrom.png');
-monsters_list.push(monster1);
-
-const monster3 = new Monster(50, 70, 40, 90, 2, [15, 1], 'kyurem', 'Ash', 'images/monsters/kyurem.jpg');
-monsters_list.push(monster3);
+console.log("miaos")
 
 let first_monster = monsters_list[actual_first_monster_index];
 
+$(document).ready(async function(){
+    //Initialization web3 and contract constants
+    const web3 = new Web3(window.ethereum || "http://localhost:7545");
+  
+    const gameContractData = await fetch("/GameContractJSON");
+    const gameContractJSON = await gameContractData.json();
+  
+    const pinataGatewayToken = "G83CiLljLnCGugjxSAoseEaAMBUeOMdRy8o4hUxhi7bVYNqOxDt0G-k8Y9TuBW31";
+  
+    const monsterContractData = await fetch("/AEMonsterNFTJSON");
+    const monsterContracJSON = await monsterContractData.json();
+  
+    const gameContractAddress = gameContractJSON.networks['5777'].address;
+    const gameContractABI=  gameContractJSON.abi;
+  
+    
+    const monsterContractABI = monsterContracJSON.abi;
+  
+    const gameContract = new web3.eth.Contract(gameContractABI,gameContractAddress); 
+  
+    //Load the monsterContract address
+    var monsterContractAddress = await getMonsterContractAddress();
+  
+    const monsterContract = new web3.eth.Contract(monsterContractABI,monsterContractAddress); 
+  
+    var accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });; 
+    var currentAccount = accounts[0];
+
+    let actual_first_monster_index = 0;
+
+    await getMonstersOf(currentAccount).then(monster1 => {
+    
+
+    })
+    
 missions_list = [];
+
+
 
 const hard_mission = new Mission("text",0);
 missions_list.push(hard_mission)
@@ -48,10 +73,50 @@ missions_list.push(normal_mission)
 
 const easy_mission = new Mission("trova il cane",2);
 missions_list.push(easy_mission)
+  
+    async function getMonsterContractAddress(){
+        return new Promise((resolve, reject) => {
+          gameContract.methods.AEMonsterContract().call()
+            .then(address => {
+              resolve(address);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+         });
+      }
+    
+      //Load the monster of the current user
+      async function getMonstersOf(currentAccount){
+        monsterContract.methods.getMonstersOwnedBy(currentAccount).call().then(monsters=>{
+          if(monsters.length != 0){
+            monsterContract.methods.getMonstersURIOwnedBy(currentAccount).call().then(monstersURI=>{
+    
+              for(let i =0;i<monsters.length;i++){
+                var imageURL = monstersURI[i]+"?pinataGatewayToken="+pinataGatewayToken;
+
+                const monster = new Monster(50, 70, 40, 90, 2, [15, 1], 'monster', 'Ash', imageURL);
+                monsters_list.push(monster);  
+                console.log(monsters_list)   
+    
+              }
+    
+            }).then( miao => {
+              console.log("maraiaos")
+              console.log(monsters_list) 
+        console.log(monsters_list[0])
+        first_monster =  monsters_list[actual_first_monster_index];
+        load_first_monster();
+        load_missions();
+            });;
+          }
+        })
+      }
+
+});
 
 document.addEventListener('DOMContentLoaded', function() {
-    load_first_monster();
-    load_missions();
+    
 });
 
 function load_first_monster(){
@@ -59,8 +124,13 @@ function load_first_monster(){
 }
 
 function update_new_first_monster() {
+    console.log(monsters_list)
+    console.log("miaooooooooooooooooooooooooooooo")
+    console.log(actual_first_monster_index)
+    console.log(monsters_list[0])
     new_first_monster = monsters_list[actual_first_monster_index]
     const monster_image = document.getElementById('main_monster_image');
+    console.log(new_first_monster)
     monster_image.src=new_first_monster.image_url;
     const monster_name = document.getElementById('main_monster_name');
     monster_name.textContent=new_first_monster.name;
