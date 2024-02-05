@@ -1,6 +1,7 @@
 {
   "contractName": "SignedMath",
   "abi": [],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Standard signed math utilities missing in the Solidity language.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":\"SignedMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xe334c91471e21470447ffb60e92a6fa01d7e69e29f6027fdc74078277e94bf00\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5ddc1a82441067bed8d9678efc4ce8ec44c7348a7102d3a681f5d6dc3d2c058\",\"dweb:/ipfs/QmYjjsKmoYRTBmZgNh8cbqDc3BVjYkFDjoUTZVUycap434\"]}},\"version\":1}",
   "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206ac486571be2143caaf0e76b6f7cfeceee6cb6891ddf91eb909b4208c0dad47764736f6c63430008130033",
   "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206ac486571be2143caaf0e76b6f7cfeceee6cb6891ddf91eb909b4208c0dad47764736f6c63430008130033",
@@ -11,6 +12,18 @@
   "deployedSourceMap": "224:1081:23:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/math/SignedMath.sol)\r\n\r\npragma solidity ^0.8.18;\r\n\r\n/**\r\n * @dev Standard signed math utilities missing in the Solidity language.\r\n */\r\nlibrary SignedMath {\r\n    /**\r\n     * @dev Returns the largest of two signed numbers.\r\n     */\r\n    function max(int256 a, int256 b) internal pure returns (int256) {\r\n        return a > b ? a : b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the smallest of two signed numbers.\r\n     */\r\n    function min(int256 a, int256 b) internal pure returns (int256) {\r\n        return a < b ? a : b;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the average of two signed numbers without overflow.\r\n     * The result is rounded towards zero.\r\n     */\r\n    function average(int256 a, int256 b) internal pure returns (int256) {\r\n        // Formula from the book \"Hacker's Delight\"\r\n        int256 x = (a & b) + ((a ^ b) >> 1);\r\n        return x + (int256(uint256(x) >> 255) & (a ^ b));\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the absolute unsigned value of a signed value.\r\n     */\r\n    function abs(int256 n) internal pure returns (uint256) {\r\n        unchecked {\r\n            // must be unchecked in order to support `n = type(int256).min`\r\n            return uint256(n >= 0 ? n : -n);\r\n        }\r\n    }\r\n}\r\n",
   "sourcePath": "C:\\Users\\cschi\\Desktop\\Scuola\\Magistrale\\Secondo Anno\\Primo Semestre\\Blockchain and DLTs\\Progetto\\AetherMon\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Standard signed math utilities missing in the Solidity language.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":\"SignedMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xe0869940bb07b87cc1d715263415249a09ee58f7de8b675270e97e2ed432e053\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ef19d93f959ba9e093c8ab1868999acbf314a862d6186f046f4a10e5ad22f646\",\"dweb:/ipfs/QmY8UDhCdthvkpMkWEDpJQFNL8we7KuXNZuZ8arSsedpKP\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202af1482067fe7e2b6bd44cce37221ef85bf6f0eb8f56b2463e7f01bfccddcd1c64736f6c63430008130033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202af1482067fe7e2b6bd44cce37221ef85bf6f0eb8f56b2463e7f01bfccddcd1c64736f6c63430008130033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "216:1047:23:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;216:1047:23;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "216:1047:23:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/math/SignedMath.sol)\n\npragma solidity ^0.8.18;\n\n/**\n * @dev Standard signed math utilities missing in the Solidity language.\n */\nlibrary SignedMath {\n    /**\n     * @dev Returns the largest of two signed numbers.\n     */\n    function max(int256 a, int256 b) internal pure returns (int256) {\n        return a > b ? a : b;\n    }\n\n    /**\n     * @dev Returns the smallest of two signed numbers.\n     */\n    function min(int256 a, int256 b) internal pure returns (int256) {\n        return a < b ? a : b;\n    }\n\n    /**\n     * @dev Returns the average of two signed numbers without overflow.\n     * The result is rounded towards zero.\n     */\n    function average(int256 a, int256 b) internal pure returns (int256) {\n        // Formula from the book \"Hacker's Delight\"\n        int256 x = (a & b) + ((a ^ b) >> 1);\n        return x + (int256(uint256(x) >> 255) & (a ^ b));\n    }\n\n    /**\n     * @dev Returns the absolute unsigned value of a signed value.\n     */\n    function abs(int256 n) internal pure returns (uint256) {\n        unchecked {\n            // must be unchecked in order to support `n = type(int256).min`\n            return uint256(n >= 0 ? n : -n);\n        }\n    }\n}\n",
+  "sourcePath": "C:\\Users\\HP\\Desktop\\Università\\Magistrale\\2 anno\\1 Semestre\\Blockchain & DLT\\Progetto\\src\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "ast": {
     "absolutePath": "project:/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol",
     "exportedSymbols": {
@@ -78,7 +91,11 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4774,
+<<<<<<< HEAD
                         "src": "406:1:23",
+=======
+                        "src": "393:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -92,7 +109,11 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4776,
+<<<<<<< HEAD
                         "src": "410:1:23",
+=======
+                        "src": "397:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -110,7 +131,11 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4776,
+<<<<<<< HEAD
                       "src": "418:1:23",
+=======
+                      "src": "405:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -129,7 +154,11 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4774,
+<<<<<<< HEAD
                       "src": "414:1:23",
+=======
+                      "src": "401:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -172,7 +201,11 @@
                   "nameLocation": "344:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4789,
+<<<<<<< HEAD
                   "src": "337:8:23",
+=======
+                  "src": "325:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -199,7 +232,11 @@
                   "nameLocation": "354:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4789,
+<<<<<<< HEAD
                   "src": "347:8:23",
+=======
+                  "src": "335:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -233,7 +270,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 4789,
+<<<<<<< HEAD
                   "src": "380:6:23",
+=======
+                  "src": "368:6:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -256,7 +297,11 @@
               "src": "379:8:23"
             },
             "scope": 4873,
+<<<<<<< HEAD
             "src": "324:103:23",
+=======
+            "src": "312:101:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -285,7 +330,11 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4792,
+<<<<<<< HEAD
                         "src": "592:1:23",
+=======
+                        "src": "572:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -299,7 +348,11 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4794,
+<<<<<<< HEAD
                         "src": "596:1:23",
+=======
+                        "src": "576:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -317,7 +370,11 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4794,
+<<<<<<< HEAD
                       "src": "604:1:23",
+=======
+                      "src": "584:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -336,7 +393,11 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4792,
+<<<<<<< HEAD
                       "src": "600:1:23",
+=======
+                      "src": "580:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -379,7 +440,11 @@
                   "nameLocation": "530:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4807,
+<<<<<<< HEAD
                   "src": "523:8:23",
+=======
+                  "src": "504:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -406,7 +471,11 @@
                   "nameLocation": "540:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4807,
+<<<<<<< HEAD
                   "src": "533:8:23",
+=======
+                  "src": "514:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -440,7 +509,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 4807,
+<<<<<<< HEAD
                   "src": "566:6:23",
+=======
+                  "src": "547:6:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -463,7 +536,11 @@
               "src": "565:8:23"
             },
             "scope": 4873,
+<<<<<<< HEAD
             "src": "510:103:23",
+=======
+            "src": "491:101:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -487,7 +564,11 @@
                       "nameLocation": "895:1:23",
                       "nodeType": "VariableDeclaration",
                       "scope": 4850,
+<<<<<<< HEAD
                       "src": "888:8:23",
+=======
+                      "src": "859:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -536,7 +617,11 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4810,
+<<<<<<< HEAD
                             "src": "900:1:23",
+=======
+                            "src": "871:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -550,7 +635,11 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4812,
+<<<<<<< HEAD
                             "src": "904:1:23",
+=======
+                            "src": "875:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -608,7 +697,11 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 4810,
+<<<<<<< HEAD
                                   "src": "911:1:23",
+=======
+                                  "src": "882:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -622,7 +715,11 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 4812,
+<<<<<<< HEAD
                                   "src": "915:1:23",
+=======
+                                  "src": "886:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -712,7 +809,11 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4818,
+<<<<<<< HEAD
                       "src": "941:1:23",
+=======
+                      "src": "911:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -752,7 +853,11 @@
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
                                       "referencedDeclaration": 4818,
+<<<<<<< HEAD
                                       "src": "961:1:23",
+=======
+                                      "src": "931:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
@@ -888,7 +993,11 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 4810,
+<<<<<<< HEAD
                                   "src": "975:1:23",
+=======
+                                  "src": "945:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -902,7 +1011,11 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 4812,
+<<<<<<< HEAD
                                   "src": "979:1:23",
+=======
+                                  "src": "949:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -986,7 +1099,11 @@
                   "nameLocation": "780:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4851,
+<<<<<<< HEAD
                   "src": "773:8:23",
+=======
+                  "src": "746:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1013,7 +1130,11 @@
                   "nameLocation": "790:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4851,
+<<<<<<< HEAD
                   "src": "783:8:23",
+=======
+                  "src": "756:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1047,7 +1168,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 4851,
+<<<<<<< HEAD
                   "src": "816:6:23",
+=======
+                  "src": "789:6:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1070,7 +1195,11 @@
               "src": "815:8:23"
             },
             "scope": 4873,
+<<<<<<< HEAD
             "src": "756:234:23",
+=======
+            "src": "729:230:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -1106,7 +1235,11 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 4854,
+<<<<<<< HEAD
                                 "src": "1267:1:23",
+=======
+                                "src": "1228:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -1152,7 +1285,11 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 4854,
+<<<<<<< HEAD
                                 "src": "1281:1:23",
+=======
+                                "src": "1242:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -1176,7 +1313,11 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4854,
+<<<<<<< HEAD
                               "src": "1276:1:23",
+=======
+                              "src": "1237:1:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -1264,7 +1405,11 @@
                   "nameLocation": "1104:1:23",
                   "nodeType": "VariableDeclaration",
                   "scope": 4872,
+<<<<<<< HEAD
                   "src": "1097:8:23",
+=======
+                  "src": "1061:8:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1298,7 +1443,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 4872,
+<<<<<<< HEAD
                   "src": "1130:7:23",
+=======
+                  "src": "1094:7:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1321,14 +1470,22 @@
               "src": "1129:9:23"
             },
             "scope": 4873,
+<<<<<<< HEAD
             "src": "1084:218:23",
+=======
+            "src": "1048:213:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
         "scope": 4874,
+<<<<<<< HEAD
         "src": "224:1081:23",
+=======
+        "src": "216:1047:23",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": []
       }
     ],
@@ -1340,7 +1497,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
+<<<<<<< HEAD
   "updatedAt": "2024-02-03T15:45:33.407Z",
+=======
+  "updatedAt": "2024-02-03T19:18:54.232Z",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "devdoc": {
     "details": "Standard signed math utilities missing in the Solidity language.",
     "kind": "dev",

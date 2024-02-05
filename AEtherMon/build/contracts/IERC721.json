@@ -287,7 +287,11 @@
       "type": "function"
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Required interface of an ERC721 compliant contract.\",\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when `owner` enables `approved` to manage the `tokenId` token.\"},\"ApprovalForAll(address,address,bool)\":{\"details\":\"Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets.\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `tokenId` token is transferred from `from` to `to`.\"}},\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Gives permission to `to` to transfer `tokenId` token to another account. The approval is cleared when the token is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist. Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in ``owner``'s account.\"},\"getApproved(uint256)\":{\"details\":\"Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist.\"},\"isApprovedForAll(address,address)\":{\"details\":\"Returns if the `operator` is allowed to manage all of the assets of `owner`. See {setApprovalForAll}\"},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist.\"},\"safeTransferFrom(address,address,uint256)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients are aware of the ERC721 protocol to prevent tokens from being forever locked. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must have been allowed to move this token by either {approve} or   {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event.\"},\"safeTransferFrom(address,address,uint256,bytes)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event.\"},\"setApprovalForAll(address,bool)\":{\"details\":\"Approve or remove `operator` as an operator for the caller. Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller. Requirements: - The `operator` cannot be the address zero. Emits an {ApprovalForAll} event.\"},\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Transfers `tokenId` token from `from` to `to`. WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC721 or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must understand this adds an external call which potentially creates a reentrancy vulnerability. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":\"IERC721\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x0811e445a65650505c2ad4629639b422687561f64017addca0580eae5b9b68b1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5c957b1ee22e7a065aef5835eb562382213632186a936bcb5f806f7804408c90\",\"dweb:/ipfs/QmaKoinJRatUV95c28kPbwT9YeCc3ehn63x1oSKNtnmRdc\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x3006277fdeb61d765c129683e12ee45051ac4eb742c2326f85d0d510575e1788\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c54927e30e121445de2eded85a67878b3c07526008eeec4f1d5bddd122359d8e\",\"dweb:/ipfs/Qmabs8qFpU9tVQy2u6dNLeBzkbYHKadprwrVEn8vdTnLxy\"]}},\"version\":1}",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Required interface of an ERC721 compliant contract.\",\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when `owner` enables `approved` to manage the `tokenId` token.\"},\"ApprovalForAll(address,address,bool)\":{\"details\":\"Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets.\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `tokenId` token is transferred from `from` to `to`.\"}},\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Gives permission to `to` to transfer `tokenId` token to another account. The approval is cleared when the token is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist. Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the number of tokens in ``owner``'s account.\"},\"getApproved(uint256)\":{\"details\":\"Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist.\"},\"isApprovedForAll(address,address)\":{\"details\":\"Returns if the `operator` is allowed to manage all of the assets of `owner`. See {setApprovalForAll}\"},\"ownerOf(uint256)\":{\"details\":\"Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist.\"},\"safeTransferFrom(address,address,uint256)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients are aware of the ERC721 protocol to prevent tokens from being forever locked. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must have been allowed to move this token by either {approve} or   {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event.\"},\"safeTransferFrom(address,address,uint256,bytes)\":{\"details\":\"Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event.\"},\"setApprovalForAll(address,bool)\":{\"details\":\"Approve or remove `operator` as an operator for the caller. Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller. Requirements: - The `operator` cannot be the address zero. Emits an {ApprovalForAll} event.\"},\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Transfers `tokenId` token from `from` to `to`. WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC721 or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must understand this adds an external call which potentially creates a reentrancy vulnerability. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":\"IERC721\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x1a252695a8b67fc92ff05ceb339e90ea7581eb1dfdf05b2215629973a76ba0c9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ef51055be58966cd731b02c7a113a2ece0c5fd580467600d420beb3fe6cdf8b\",\"dweb:/ipfs/Qme4fSpmjKS7FDvVtDUf7vGWxVg1XgYVGdiVrDGvmxfs9g\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x58b830ee7280434988831dc838fbf3eac385a1a162489c18a06f6e562d4c69f3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8b8bcf296a84599bb4dc043002c45d3f36e2d299cdffb3f0c91cc89f90af816e\",\"dweb:/ipfs/QmV25F6NbnsqS4YfTJutzWVxQ5DfKZizhbjZvdtapyvknq\"]}},\"version\":1}",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -330,7 +334,11 @@
         "nodeType": "ImportDirective",
         "scope": 3222,
         "sourceUnit": 3715,
+<<<<<<< HEAD
         "src": "139:62:14",
+=======
+        "src": "134:62:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "symbolAliases": [
           {
             "foreign": {
@@ -339,7 +347,11 @@
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
               "referencedDeclaration": 3714,
+<<<<<<< HEAD
               "src": "147:7:14",
+=======
+              "src": "142:7:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -359,7 +371,11 @@
               ],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 3714,
+<<<<<<< HEAD
               "src": "297:7:14"
+=======
+              "src": "287:7:14"
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             },
             "id": 3111,
             "nodeType": "InheritanceSpecifier",
@@ -411,7 +427,11 @@
                   "nameLocation": "439:4:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3120,
+<<<<<<< HEAD
                   "src": "423:20:14",
+=======
+                  "src": "409:20:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -440,7 +460,11 @@
                   "nameLocation": "461:2:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3120,
+<<<<<<< HEAD
                   "src": "445:18:14",
+=======
+                  "src": "431:18:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -469,7 +493,11 @@
                   "nameLocation": "481:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3120,
+<<<<<<< HEAD
                   "src": "465:23:14",
+=======
+                  "src": "451:23:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -519,7 +547,11 @@
                   "nameLocation": "631:5:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3129,
+<<<<<<< HEAD
                   "src": "615:21:14",
+=======
+                  "src": "596:21:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -548,7 +580,11 @@
                   "nameLocation": "654:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3129,
+<<<<<<< HEAD
                   "src": "638:24:14",
+=======
+                  "src": "619:24:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -577,7 +613,11 @@
                   "nameLocation": "680:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3129,
+<<<<<<< HEAD
                   "src": "664:23:14",
+=======
+                  "src": "645:23:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -627,7 +667,11 @@
                   "nameLocation": "859:5:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3138,
+<<<<<<< HEAD
                   "src": "843:21:14",
+=======
+                  "src": "819:21:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -656,7 +700,11 @@
                   "nameLocation": "882:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3138,
+<<<<<<< HEAD
                   "src": "866:24:14",
+=======
+                  "src": "842:24:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -685,7 +733,11 @@
                   "nameLocation": "897:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3138,
+<<<<<<< HEAD
                   "src": "892:13:14",
+=======
+                  "src": "868:13:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -736,7 +788,11 @@
                   "nameLocation": "1026:5:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3146,
+<<<<<<< HEAD
                   "src": "1018:13:14",
+=======
+                  "src": "989:13:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -771,7 +827,11 @@
                   "nameLocation": "1064:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3146,
+<<<<<<< HEAD
                   "src": "1056:15:14",
+=======
+                  "src": "1027:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -794,7 +854,11 @@
               "src": "1055:17:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "999:74:14",
+=======
+            "src": "970:74:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -826,7 +890,11 @@
                   "nameLocation": "1249:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3154,
+<<<<<<< HEAD
                   "src": "1241:15:14",
+=======
+                  "src": "1203:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -860,7 +928,11 @@
                   "nameLocation": "1289:5:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3154,
+<<<<<<< HEAD
                   "src": "1281:13:14",
+=======
+                  "src": "1243:13:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -884,7 +956,11 @@
               "src": "1280:15:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "1224:72:14",
+=======
+            "src": "1186:72:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -916,7 +992,11 @@
                   "nameLocation": "1922:4:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3166,
+<<<<<<< HEAD
                   "src": "1914:12:14",
+=======
+                  "src": "1860:12:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -944,7 +1024,11 @@
                   "nameLocation": "1936:2:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3166,
+<<<<<<< HEAD
                   "src": "1928:10:14",
+=======
+                  "src": "1874:10:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -972,7 +1056,11 @@
                   "nameLocation": "1948:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3166,
+<<<<<<< HEAD
                   "src": "1940:15:14",
+=======
+                  "src": "1886:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -999,7 +1087,11 @@
                   "nameLocation": "1972:4:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3166,
+<<<<<<< HEAD
                   "src": "1957:19:14",
+=======
+                  "src": "1903:19:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1028,7 +1120,11 @@
               "src": "1986:0:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "1888:99:14",
+=======
+            "src": "1834:99:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1060,7 +1156,11 @@
                   "nameLocation": "2755:4:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3176,
+<<<<<<< HEAD
                   "src": "2747:12:14",
+=======
+                  "src": "2675:12:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1088,7 +1188,11 @@
                   "nameLocation": "2769:2:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3176,
+<<<<<<< HEAD
                   "src": "2761:10:14",
+=======
+                  "src": "2689:10:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1116,7 +1220,11 @@
                   "nameLocation": "2781:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3176,
+<<<<<<< HEAD
                   "src": "2773:15:14",
+=======
+                  "src": "2701:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1145,7 +1253,11 @@
               "src": "2798:0:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "2721:78:14",
+=======
+            "src": "2649:78:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1177,7 +1289,11 @@
                   "nameLocation": "3590:4:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3186,
+<<<<<<< HEAD
                   "src": "3582:12:14",
+=======
+                  "src": "3492:12:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1205,7 +1321,11 @@
                   "nameLocation": "3604:2:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3186,
+<<<<<<< HEAD
                   "src": "3596:10:14",
+=======
+                  "src": "3506:10:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1233,7 +1353,11 @@
                   "nameLocation": "3616:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3186,
+<<<<<<< HEAD
                   "src": "3608:15:14",
+=======
+                  "src": "3518:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1262,7 +1386,11 @@
               "src": "3633:0:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "3560:74:14",
+=======
+            "src": "3470:74:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1294,7 +1422,11 @@
                   "nameLocation": "4137:2:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3194,
+<<<<<<< HEAD
                   "src": "4129:10:14",
+=======
+                  "src": "4024:10:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1322,7 +1454,11 @@
                   "nameLocation": "4149:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3194,
+<<<<<<< HEAD
                   "src": "4141:15:14",
+=======
+                  "src": "4036:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1351,7 +1487,11 @@
               "src": "4166:0:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "4112:55:14",
+=======
+            "src": "4007:55:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1383,7 +1523,11 @@
                   "nameLocation": "4540:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3202,
+<<<<<<< HEAD
                   "src": "4532:16:14",
+=======
+                  "src": "4415:16:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1411,7 +1555,11 @@
                   "nameLocation": "4555:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3202,
+<<<<<<< HEAD
                   "src": "4550:13:14",
+=======
+                  "src": "4433:13:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1440,7 +1588,11 @@
               "src": "4573:0:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "4505:69:14",
+=======
+            "src": "4388:69:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1472,7 +1624,11 @@
                   "nameLocation": "4762:7:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3210,
+<<<<<<< HEAD
                   "src": "4754:15:14",
+=======
+                  "src": "4628:15:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1506,7 +1662,11 @@
                   "nameLocation": "4802:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3210,
+<<<<<<< HEAD
                   "src": "4794:16:14",
+=======
+                  "src": "4668:16:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1530,7 +1690,11 @@
               "src": "4793:18:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "4733:79:14",
+=======
+            "src": "4607:79:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1562,7 +1726,11 @@
                   "nameLocation": "5002:5:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3220,
+<<<<<<< HEAD
                   "src": "4994:13:14",
+=======
+                  "src": "4861:13:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1590,7 +1758,11 @@
                   "nameLocation": "5017:8:14",
                   "nodeType": "VariableDeclaration",
                   "scope": 3220,
+<<<<<<< HEAD
                   "src": "5009:16:14",
+=======
+                  "src": "4876:16:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1625,7 +1797,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 3220,
+<<<<<<< HEAD
                   "src": "5050:4:14",
+=======
+                  "src": "4917:4:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1648,14 +1824,22 @@
               "src": "5049:6:14"
             },
             "scope": 3221,
+<<<<<<< HEAD
             "src": "4968:88:14",
+=======
+            "src": "4835:88:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
         "scope": 3222,
+<<<<<<< HEAD
         "src": "276:4783:14",
+=======
+        "src": "266:4659:14",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": []
       }
     ],
@@ -1667,7 +1851,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
+<<<<<<< HEAD
   "updatedAt": "2024-02-03T15:45:33.394Z",
+=======
+  "updatedAt": "2024-02-03T19:18:54.204Z",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "devdoc": {
     "details": "Required interface of an ERC721 compliant contract.",
     "events": {

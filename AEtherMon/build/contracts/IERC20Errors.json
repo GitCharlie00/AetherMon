@@ -88,7 +88,11 @@
       "type": "error"
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"allowance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientAllowance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidApprover\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSpender\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Standard ERC20 Errors Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens.\",\"errors\":{\"ERC20InsufficientAllowance(address,uint256,uint256)\":[{\"details\":\"Indicates a failure with the `spender`\\u2019s `allowance`. Used in transfers.\",\"params\":{\"allowance\":\"Amount of tokens a `spender` is allowed to operate with.\",\"needed\":\"Minimum amount required to perform a transfer.\",\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}],\"ERC20InsufficientBalance(address,uint256,uint256)\":[{\"details\":\"Indicates an error related to the current `balance` of a `sender`. Used in transfers.\",\"params\":{\"balance\":\"Current balance for the interacting account.\",\"needed\":\"Minimum amount required to perform a transfer.\",\"sender\":\"Address whose tokens are being transferred.\"}}],\"ERC20InvalidApprover(address)\":[{\"details\":\"Indicates a failure with the `approver` of a token to be approved. Used in approvals.\",\"params\":{\"approver\":\"Address initiating an approval operation.\"}}],\"ERC20InvalidReceiver(address)\":[{\"details\":\"Indicates a failure with the token `receiver`. Used in transfers.\",\"params\":{\"receiver\":\"Address to which tokens are being transferred.\"}}],\"ERC20InvalidSender(address)\":[{\"details\":\"Indicates a failure with the token `sender`. Used in transfers.\",\"params\":{\"sender\":\"Address whose tokens are being transferred.\"}}],\"ERC20InvalidSpender(address)\":[{\"details\":\"Indicates a failure with the `spender` to be approved. Used in approvals.\",\"params\":{\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}]},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol\":\"IERC20Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x1ad8f3ecdf9d23bd80b7244c9fe0dc7e6526ad71f35c7e2f3f26d547bcebfbf6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5c7f78a2e2372a0b8e95f4ce97fa0dc98b750fc18be2fe4f3952a3909e0979e\",\"dweb:/ipfs/QmUNCujDReMK8g2wiQxPNktG38DymrUSfuUyx5WkKqHBWC\"]}},\"version\":1}",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"allowance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientAllowance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"needed\",\"type\":\"uint256\"}],\"name\":\"ERC20InsufficientBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"approver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidApprover\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC20InvalidReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC20InvalidSpender\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Standard ERC20 Errors Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens.\",\"errors\":{\"ERC20InsufficientAllowance(address,uint256,uint256)\":[{\"details\":\"Indicates a failure with the `spender`\\u2019s `allowance`. Used in transfers.\",\"params\":{\"allowance\":\"Amount of tokens a `spender` is allowed to operate with.\",\"needed\":\"Minimum amount required to perform a transfer.\",\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}],\"ERC20InsufficientBalance(address,uint256,uint256)\":[{\"details\":\"Indicates an error related to the current `balance` of a `sender`. Used in transfers.\",\"params\":{\"balance\":\"Current balance for the interacting account.\",\"needed\":\"Minimum amount required to perform a transfer.\",\"sender\":\"Address whose tokens are being transferred.\"}}],\"ERC20InvalidApprover(address)\":[{\"details\":\"Indicates a failure with the `approver` of a token to be approved. Used in approvals.\",\"params\":{\"approver\":\"Address initiating an approval operation.\"}}],\"ERC20InvalidReceiver(address)\":[{\"details\":\"Indicates a failure with the token `receiver`. Used in transfers.\",\"params\":{\"receiver\":\"Address to which tokens are being transferred.\"}}],\"ERC20InvalidSender(address)\":[{\"details\":\"Indicates a failure with the token `sender`. Used in transfers.\",\"params\":{\"sender\":\"Address whose tokens are being transferred.\"}}],\"ERC20InvalidSpender(address)\":[{\"details\":\"Indicates a failure with the `spender` to be approved. Used in approvals.\",\"params\":{\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}]},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol\":\"IERC20Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x10cde11cb3266e0b6df7d796a11699e071073340c95a88e9dbdbc26dcf621b0e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://de443ce445815e452a89e1c83396179d24ef3898e4d967acd7b9132eba66a331\",\"dweb:/ipfs/QmW7o1ngXv9TfhfhjEKZg4v1LSDZEy3mo9z11oEMtHqq3W\"]}},\"version\":1}",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -171,7 +175,11 @@
                   "nameLocation": "675:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1305,
+<<<<<<< HEAD
                   "src": "667:14:8",
+=======
+                  "src": "652:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -199,7 +207,11 @@
                   "nameLocation": "691:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1305,
+<<<<<<< HEAD
                   "src": "683:15:8",
+=======
+                  "src": "668:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -226,7 +238,11 @@
                   "nameLocation": "708:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1305,
+<<<<<<< HEAD
                   "src": "700:14:8",
+=======
+                  "src": "685:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -274,7 +290,11 @@
                   "nameLocation": "918:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1310,
+<<<<<<< HEAD
                   "src": "910:14:8",
+=======
+                  "src": "889:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -323,7 +343,11 @@
                   "nameLocation": "1137:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1315,
+<<<<<<< HEAD
                   "src": "1129:16:8",
+=======
+                  "src": "1102:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -372,7 +396,11 @@
                   "nameLocation": "1552:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1324,
+<<<<<<< HEAD
                   "src": "1544:15:8",
+=======
+                  "src": "1509:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -400,7 +428,11 @@
                   "nameLocation": "1569:9:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1324,
+<<<<<<< HEAD
                   "src": "1561:17:8",
+=======
+                  "src": "1526:17:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -427,7 +459,11 @@
                   "nameLocation": "1588:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1324,
+<<<<<<< HEAD
                   "src": "1580:14:8",
+=======
+                  "src": "1545:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -475,7 +511,11 @@
                   "nameLocation": "1822:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1329,
+<<<<<<< HEAD
                   "src": "1814:16:8",
+=======
+                  "src": "1773:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -524,7 +564,11 @@
                   "nameLocation": "2078:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1334,
+<<<<<<< HEAD
                   "src": "2070:15:8",
+=======
+                  "src": "2023:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -551,7 +595,11 @@
           }
         ],
         "scope": 1431,
+<<<<<<< HEAD
         "src": "286:1804:8",
+=======
+        "src": "278:1764:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": [
           1305,
           1310,
@@ -606,7 +654,11 @@
                   "nameLocation": "2533:5:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1341,
+<<<<<<< HEAD
                   "src": "2525:13:8",
+=======
+                  "src": "2465:13:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -655,7 +707,11 @@
                   "nameLocation": "2726:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1346,
+<<<<<<< HEAD
                   "src": "2718:15:8",
+=======
+                  "src": "2652:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -703,7 +759,11 @@
                   "nameLocation": "3078:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1355,
+<<<<<<< HEAD
                   "src": "3070:14:8",
+=======
+                  "src": "2996:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -731,7 +791,11 @@
                   "nameLocation": "3094:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1355,
+<<<<<<< HEAD
                   "src": "3086:15:8",
+=======
+                  "src": "3012:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -758,7 +822,11 @@
                   "nameLocation": "3111:5:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1355,
+<<<<<<< HEAD
                   "src": "3103:13:8",
+=======
+                  "src": "3029:13:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -807,7 +875,11 @@
                   "nameLocation": "3321:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1360,
+<<<<<<< HEAD
                   "src": "3313:14:8",
+=======
+                  "src": "3233:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -856,7 +928,11 @@
                   "nameLocation": "3541:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1365,
+<<<<<<< HEAD
                   "src": "3533:16:8",
+=======
+                  "src": "3447:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -905,7 +981,11 @@
                   "nameLocation": "3857:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1372,
+<<<<<<< HEAD
                   "src": "3849:16:8",
+=======
+                  "src": "3756:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -933,7 +1013,11 @@
                   "nameLocation": "3875:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1372,
+<<<<<<< HEAD
                   "src": "3867:15:8",
+=======
+                  "src": "3774:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -981,7 +1065,11 @@
                   "nameLocation": "4111:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1377,
+<<<<<<< HEAD
                   "src": "4103:16:8",
+=======
+                  "src": "4004:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1030,7 +1118,11 @@
                   "nameLocation": "4371:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1382,
+<<<<<<< HEAD
                   "src": "4363:16:8",
+=======
+                  "src": "4258:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1057,7 +1149,11 @@
           }
         ],
         "scope": 1431,
+<<<<<<< HEAD
         "src": "2240:2144:8",
+=======
+        "src": "2186:2092:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": [
           1341,
           1346,
@@ -1114,7 +1210,11 @@
                   "nameLocation": "4982:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1395,
+<<<<<<< HEAD
                   "src": "4974:14:8",
+=======
+                  "src": "4854:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1142,7 +1242,11 @@
                   "nameLocation": "4998:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1395,
+<<<<<<< HEAD
                   "src": "4990:15:8",
+=======
+                  "src": "4870:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1169,7 +1273,11 @@
                   "nameLocation": "5015:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1395,
+<<<<<<< HEAD
                   "src": "5007:14:8",
+=======
+                  "src": "4887:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1196,7 +1304,11 @@
                   "nameLocation": "5031:7:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1395,
+<<<<<<< HEAD
                   "src": "5023:15:8",
+=======
+                  "src": "4903:15:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1244,7 +1356,11 @@
                   "nameLocation": "5244:6:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1400,
+<<<<<<< HEAD
                   "src": "5236:14:8",
+=======
+                  "src": "5110:14:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1293,7 +1409,11 @@
                   "nameLocation": "5465:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1405,
+<<<<<<< HEAD
                   "src": "5457:16:8",
+=======
+                  "src": "5325:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1342,7 +1462,11 @@
                   "nameLocation": "5792:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1412,
+<<<<<<< HEAD
                   "src": "5784:16:8",
+=======
+                  "src": "5645:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1370,7 +1494,11 @@
                   "nameLocation": "5810:5:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1412,
+<<<<<<< HEAD
                   "src": "5802:13:8",
+=======
+                  "src": "5663:13:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1419,7 +1547,11 @@
                   "nameLocation": "6045:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1417,
+<<<<<<< HEAD
                   "src": "6037:16:8",
+=======
+                  "src": "5892:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1468,7 +1600,11 @@
                   "nameLocation": "6306:8:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1422,
+<<<<<<< HEAD
                   "src": "6298:16:8",
+=======
+                  "src": "6147:16:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1517,7 +1653,11 @@
                   "nameLocation": "6655:9:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1429,
+<<<<<<< HEAD
                   "src": "6647:17:8",
+=======
+                  "src": "6488:17:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1544,7 +1684,11 @@
                   "nameLocation": "6674:12:8",
                   "nodeType": "VariableDeclaration",
                   "scope": 1429,
+<<<<<<< HEAD
                   "src": "6666:20:8",
+=======
+                  "src": "6507:20:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1570,7 +1714,11 @@
           }
         ],
         "scope": 1431,
+<<<<<<< HEAD
         "src": "4536:2155:8",
+=======
+        "src": "4424:2107:8",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": [
           1395,
           1400,
@@ -1590,7 +1738,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
+<<<<<<< HEAD
   "updatedAt": "2024-02-03T15:45:33.380Z",
+=======
+  "updatedAt": "2024-02-03T19:18:54.169Z",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "devdoc": {
     "details": "Standard ERC20 Errors Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens.",
     "errors": {

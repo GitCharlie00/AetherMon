@@ -79,6 +79,7 @@ button {
     border-radius: 20px;
   }
 
+  /*
 #myModal {
    display: none;
     position: fixed; 
@@ -102,10 +103,11 @@ button {
 #modalImage {
     max-width: 100%;
     max-height: 300px; /* Altezza massima dell'immagine nella modal */
-    margin-bottom: 20px;
+ /*   margin-bottom: 20px;
 }
 
 /* Stile per il bottone di chiusura della modal */
+/*
 .close {
     color: #aaa;
     position: absolute;

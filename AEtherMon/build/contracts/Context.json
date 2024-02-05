@@ -1,7 +1,11 @@
 {
   "contractName": "Context",
   "abi": [],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":\"Context\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x8098a6d9189ecd7ecc19ff10149510b5ae6a02f57c74a07b4794ad4dcee06ebc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b1a5a8177efbe24533454db8332630fbe604dddbeb3e1b02afb8c9b0caea8609\",\"dweb:/ipfs/QmPSyjSi1RxRUVUSa1Ta9GPuKJhHnKYitKYR4jB9ajws4D\"]}},\"version\":1}",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":\"Context\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe4e1f721ba1ee5d1b36b56e732b5c6a4434b6d00e1624c690001225d1d97445d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://391549762cff89d9213d5861127ac47549bccbae368b1365ffbfd4710d7f24df\",\"dweb:/ipfs/Qmet6zc5brGYShWRME7ZwmdEeUK4TRE1rjQVQthfUB2Atd\"]}},\"version\":1}",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -120,7 +124,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 3405,
+<<<<<<< HEAD
                   "src": "725:7:18",
+=======
+                  "src": "709:7:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -144,7 +152,11 @@
               "src": "724:9:18"
             },
             "scope": 3423,
+<<<<<<< HEAD
             "src": "672:98:18",
+=======
+            "src": "656:96:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
@@ -215,7 +227,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 3414,
+<<<<<<< HEAD
                   "src": "829:14:18",
+=======
+                  "src": "809:14:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -238,7 +254,11 @@
               "src": "828:16:18"
             },
             "scope": 3423,
+<<<<<<< HEAD
             "src": "778:101:18",
+=======
+            "src": "758:99:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
@@ -298,7 +318,11 @@
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 3422,
+<<<<<<< HEAD
                   "src": "950:7:18",
+=======
+                  "src": "926:7:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -321,14 +345,22 @@
               "src": "949:9:18"
             },
             "scope": 3423,
+<<<<<<< HEAD
             "src": "887:99:18",
+=======
+            "src": "863:97:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           }
         ],
         "scope": 3424,
+<<<<<<< HEAD
         "src": "639:350:18",
+=======
+        "src": "624:338:18",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
         "usedErrors": []
       }
     ],
@@ -340,7 +372,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
+<<<<<<< HEAD
   "updatedAt": "2024-02-03T15:45:33.397Z",
+=======
+  "updatedAt": "2024-02-03T19:18:54.211Z",
+>>>>>>> 19f7467fcc436ac79c869ec02ff7056cc03cad72
   "devdoc": {
     "details": "Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.",
     "kind": "dev",
