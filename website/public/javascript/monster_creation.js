@@ -77,6 +77,7 @@ $(document).ready(async function() {
                     const element3 = document.getElementById('loading_overlay');
                     element3.style.visibility = 'hidden';
                     console.log("Errore generazione mostro");
+        
                 }
                 
         })

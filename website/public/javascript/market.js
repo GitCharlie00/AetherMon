@@ -52,6 +52,7 @@ $(document).ready(async function(){
     })
     .catch(error=>{
       console.log("Not able to caputere onSaleEvent: "+error);
+      alert("Not able to caputere onSaleEvent: "+error);
     });
 
   var retiredEmitter;
@@ -198,6 +199,9 @@ $(document).ready(async function(){
           });
 
           console.log("Mostro messo in vendita con successo");
+          const errorType='Mostro messo in vedita con successo!';
+          $('#errorModalBody').text( errorType);
+          $('#errorModal').modal('show');
         }
       });
     }
@@ -207,6 +211,9 @@ $(document).ready(async function(){
   async function removeFromSelling(monsterId){
     gameContract.methods.leaveFromSale(monsterId).send({from:currentAccount,gas: '1000000'}).then(result=>{
       console.log("Monster removed from sale");
+      const errorType='Monster removed from sale';
+          $('#errorModalBody').text( errorType);
+          $('#errorModal').modal('show');
     });
   }
 
@@ -223,6 +230,9 @@ $(document).ready(async function(){
       if(result){
         $("#confirmModal").modal("hide");
         console.log("Mostro acquistato con successo");
+        const errorType='Mostro acquistato con successo';
+          $('#errorModalBody').text( errorType);
+          $('#errorModal').modal('show');
       }
     });
     

@@ -1,7 +1,8 @@
 body, html {
+    font-family: sans-serif;
     height: 100%;
     margin: 0;
-    background-image: linear-gradient(to bottom, blue, white);
+    background-image: linear-gradient(to bottom, rgb(86, 13, 114), white);
     transition: opacity 0.5s ease;
     
 }
@@ -13,7 +14,7 @@ body, html {
 }
 
 .back_button{
-    width: 30%;
+    width: 25%;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -21,12 +22,15 @@ body, html {
 }
 
 .back_button_inner{
-    width: 70%;
-    height: 90%;
+    width: 40%;
+    height: 60%;
+    font-weight: bold;
     display: flex;
+    border-radius: 20px;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(255, 227, 45), white);
+    background-color: white;
+    cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -49,6 +53,7 @@ body, html {
     width: 50%;
     display: flex;
     justify-content: center;
+    border-radius: 20px;
     align-items: center;
     flex-direction: column;
     background-color: white;
@@ -66,11 +71,14 @@ body, html {
 .hatch_button_inner{
     height: 30%;
     width: 30%;
+    font-weight: bold;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(255, 229, 96), white);
-    box-shadow: 0px 0px 10px rgba(255, 243, 72, 0.5);
+    background-color: blueviolet;
+    box-shadow: 0px 0px 10px rgba(226, 49, 238, 0.5);
+    cursor:pointer;
 }
 
 .hatch_image{
@@ -100,9 +108,10 @@ body, html {
     flex:1;
     width: 100%;
     display: flex;
+    border-radius: 20px;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(255, 231, 72), white);
+    background-color: rgba(224, 100, 233, 0.5);
 }
 
 .main_text_inner{

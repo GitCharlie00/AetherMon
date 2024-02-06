@@ -30,9 +30,11 @@ if (window.ethereum) {
           }
       } catch (error) {
           console.error("Errore durante il consenso MetaMask:", error);
+          alert("Errore durante il consenso MetaMask")
       }
   } else {
       console.error("MetaMask non è installato");
+      alert("Errore durante il consenso MetaMask:");
   }
 }
 
@@ -66,6 +68,7 @@ async function selezionaOpzione(event) {
         await ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] });
       } catch (error) {
           console.error('Errore durante la disconnessione:', error);
+          alert("Errore durante la disconnessione!");
       }
       break;
       default:

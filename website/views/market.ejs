@@ -12,6 +12,12 @@
 </head>
 
 <body style=" background-image: url('/images/sfondo.png');">
+  <div class="back_button_inner" onclick="go_back()"> BACK </div> 
+  <script>
+    //return to homepage when click "back"
+        function go_back() {
+          window.location.href = "/homepage";}
+  </script>
      <h1>Aethermon Marketplace</h1>
 
      <button id="sellButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellModal">I want to sell!</button>
@@ -26,11 +32,11 @@
         <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="sellModalLabel" style="color:black;text-align: center;">Sell your AEtherMons</h1>
+            <h1 id="sellModalLabel" style="color:black;text-align: center;">Sell your AEtherMons</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h5 style="color:black;">My Aethermons</h5>
+                <h4 style="color:black;">My Aethermons</h4>
                 <!-- here will be loaded the AEthermons of the user-->
                 <div id="myAEthermons" class="product-container">
 
@@ -61,7 +67,19 @@
         </div>
       </div>
       
-      
+      <!--error modal-->
+      <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width: 250px; height: 150px;">
+          <div class="modal-int" style="background-color:white;">
+            <div class="modal-body" id="errorModalBody">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            </div>
+          </div>
+        </div>
+      </div>  
   
 </body>
 

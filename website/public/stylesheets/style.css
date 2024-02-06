@@ -6,7 +6,7 @@ body {
 
 
 h1 {
-    font-family: 'Sans Serif Collection';
+    font-family: sans-serif;
     font-weight: bold;
     font-size: 55px;
     line-height: 1.5;
@@ -16,16 +16,17 @@ h1 {
 }
 
 h2 {
-    font-family: 'Sans Serif Collection';
+    font-family: sans-serif;
     font-weight: bold;
     color: white;
     padding: 0;
     text-align: center;
     line-height: 1.5;
+    
 }
 
 h3 {
-    font-family: 'Sans Serif Collection';
+    font-family: sans-serif;
     font-weight: bold;
     font-size: 30px;
     color: black;
@@ -34,7 +35,7 @@ h3 {
 }
 
 h4{
-    font-family: 'Sans Serif Collection';
+    font-family: sans-serif;
     font-weight: bold;
     color: white;
     font-size:25px;
@@ -45,19 +46,20 @@ h4{
 }
 
 .sezione1 {
-    font-family: Verdana;
+    font-family: sans-serif;
     line-height: 1.0;
     background-image: url('/images/sfondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 700px;
+    height: 100%;
     color: white;
     text-align: left;
     padding: 20px;
 }
     .sezione1 p {
         margin-left: 90px;
+        line-height:1.25;
         font-size:25px;
     }
 
@@ -79,17 +81,18 @@ button {
 }
 
 .sezione2 {
+    display:flex;
     background-color: white;
     height: 300px;
     width: auto;
 }
 .q {
-    width: 27%; /* Larghezza del quadrato in pixel */
-    height: 150px; /* Altezza del quadrato in pixel */
+    width: 27%; 
+    height: 150px;
     background-color: white;
-    color: dimgray; /* Colore del testo all'interno del quadrato */
-    text-align: center; /* Allineamento del testo al centro */
-    margin-right: 10px; /* Margine destro per separare i quadrati */
+    color: dimgray; 
+    text-align: center; 
+    margin-right: 10px; 
     float: left;
     line-height:1.25;
     padding:30px; 
@@ -113,36 +116,65 @@ button {
 
     }
 
-#txrecenti{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    .sezione4{
+        font-family:sans-serif ;
+        line-height: 1.0;
+        text-align: left;
+        display: flex;
+    }
+    
+    .boxes{
+       width: 50%;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .box {
+        width: 250px;
+        height: 170px;
+        padding: 30px;
+        background-color: rgb(103, 78, 124); 
+        box-shadow: 0px 0px 10px rgba(225, 170, 217, 0.5);
+        border: 5px solid #2f0061;
+        color: #ffffff; 
+        text-align: center;
+        font-size: 12px;
+        display: flex;
+        border-radius: 25px;
+        justify-content: center;
+        align-items: center;
+        margin: 50px; 
+        margin-left:100px;
+        float: left;
     }
 
-#txrecenti th, #txrecenti td{
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-#txrecenti th{
-    background-color: #f2f2f2;
-}
+    .buttons{
+        float:right;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+    }
+    
+    
 
 #goButton {
-            top:10px;
-            right: 20px;
-            padding: 20px 20px;
-            margin: 10px auto;
-            margin-top: 30px;
-            margin-left: 100px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 18px;
-            text-align: center;
-           
+    top:10px;
+    right: 20px;
+    padding: 20px 20px;
+    align-self: center;
+    margin: 10px auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    background-color: #69a5f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(127, 181, 232, 0.5);
 }
 
 #profilo {
@@ -160,66 +192,55 @@ button {
 
 #menuTendina {
     display: none;
-            width: 150px;
-            background-color: black;
-            border-radius: 8px;
-            padding: 10px;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            z-index: 1;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    background-color: rgb(144, 92, 239);
+    border-radius: 8px;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(81, 62, 229, 0.1);
 }
 
 #menuTendina li {
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
 }
 
-.box {
-    width: 200px;
-    height: 100px;
-    padding: 30px;
-    background-color: rgb(73, 2, 140); /* Colore blu */
-    color: #ffffff; /* Colore del testo bianco */
-    text-align: center;
-    font-size: 12px;
-    display: flex;
-    border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-    margin: 50px; /* Margine di 10px da tutti i lati */
-    margin-left:100px;
-    float: left;
-}
 
 .myaether {
     width: 95%;
     margin: 20px auto;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 5px solid #ccc;
     background-color: transparent;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    box-shadow: 0px 0px 10px rgba(225, 170, 217, 0.5);
   }
 
   .character {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
     border: 1px solid #ddd;
+    border-radius: 8px;
     overflow: hidden;
     display: inline-block;
+    box-shadow: 0px 0px 10px rgba(225, 170, 217, 0.5);
   }
 
   .character img {
     width: 100%;
     height: auto;
+    cursor:pointer;
   }
 
   .modal-body{
@@ -231,4 +252,19 @@ button {
 
   .modal-body .character{
     margin: auto;
+  }
+
+  a {
+    color: white; 
+    text-decoration: none;
+  }
+
+  .learn{ 
+    margin-top: 90px;
+        margin-left: 90px;
+        margin-right: 90px;
+        line-height:1.25;
+        font-size:18px;
+        text-align:center;
+
   }
