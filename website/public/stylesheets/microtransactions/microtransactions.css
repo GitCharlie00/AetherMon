@@ -1,7 +1,8 @@
 body, html {
+    font-family: sans-serif;
     height: 100%;
     margin: 0;
-    background-image: linear-gradient(to bottom, blue, white);
+    background-image: linear-gradient(to bottom, rgb(86, 13, 114), white);
 }
 
 .container {
@@ -44,15 +45,16 @@ body, html {
 
 .back_button{
     flex:1;
-    width: 30%;
+    font-weight: bold;
+    width: 25%;
     height: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .back_button_inner{
-    width: 70%;
+    width: 40%;
     height: 90%;
     display: flex;
     justify-content: center;
@@ -60,6 +62,7 @@ body, html {
     border-radius: 20px;
     background-color: aliceblue;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .options_space{

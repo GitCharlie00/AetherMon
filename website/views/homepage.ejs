@@ -17,7 +17,7 @@
 
 </head>
 
-<body  onload="caricaProfilo()";  >
+<body  style=" background-image: url('images/sfondo.png');" onload="caricaProfilo()";  >
 
 <div class="sezione1">
    <IMG SRC="/images/logo1.png" HEIGHT=150 WIDTH=330 ALIGN=TEXTTOP>
@@ -29,7 +29,8 @@
          </ul>
       </div>
 
-<div>
+   <div class="sezione4">
+      <div class="boxes">
    <div class="box" id="pokemonNumber">
    <h2>Number of Aethermon:<br><span id="number">number</span></h2>
       <script>
@@ -40,8 +41,8 @@
    <div class="box" id="totalIncome">
    <h2>Total income: <br><span id="balance">mybalance</span></h2>
    </div>
-
-   
+   </div>
+   <div class="buttons">
    <button id="goButton" onclick="buySomeAEC()">Buy some AECoins</button>
    <br>
    <button id="goButton" onclick="goToMarketplace()" >Go to Marketplace</button>
@@ -49,9 +50,10 @@
    <button id="goButton" onclick="play()">Let's play!</button>
    <br>
    <button id="goButton" onclick="goToCreation()">Create a new AEtherMon</button>
-
+      </div>
 </div>
-<h4>My Aethermons</h4>     <!-- Here will be loaded the AEtherMons of the logged account-->
+
+<h4><strong>My Aethermons</strong></h4>     <!-- Here will be loaded the AEtherMons of the logged account-->
 <div class="myaether" id="aethermons">
    
 
@@ -59,7 +61,7 @@
 
 
 </div>
-</div>
+
 
 
 </body>

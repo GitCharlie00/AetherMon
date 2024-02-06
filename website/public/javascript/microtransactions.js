@@ -143,6 +143,7 @@ async function buyAECoin(){
     })
     .on("error",(error)=>{
         console.log("Errore nella transazione: ",error);
+        alert("Errore nella transazione");
     });
 }
 
