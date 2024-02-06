@@ -1,3 +1,10 @@
+if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
+    console.log('Metamask installed');
+  } else {
+    console.log('Metamask not installed');
+    window.location.href = "/";
+  }
+
 $(document).ready(async function() {
     const monsterGenerationURL = "http://localhost:5000";
     const web3 = new Web3(window.ethereum || "http://localhost:7545");
@@ -21,7 +28,7 @@ $(document).ready(async function() {
     //Retrive the AECoin of the account
     async function balance(currentAccount){
         gameContract.methods.coinBalanceOf(currentAccount).call().then((result)=>{
-              $("#balance").text(result+ " AEC");
+              $("#balance").text(result);
               userBalance = result;
          });
     }
@@ -46,8 +53,12 @@ $(document).ready(async function() {
                     console.log("Obtained image : "+filename);
                     console.log(typeof filename);
                     console.log(response.data)
+                    
+                    var blob = new Blob([response.data], { type: 'image/jpeg' }); // Crea un oggetto Blob con l'ArrayBuffer
+                    var url = URL.createObjectURL(blob);
                     const element3 = document.getElementById('popup_new_monster_img');
-                    element3.src = response.data;   
+                    element3.src = url;   
+                    console.log(url)
                     //Upload to IPFS
                     const pinataImgURL = await uploadFileIPFS(response.data,filename);                
                     console.log("Image saved on IPFS Pinata"); 
@@ -71,6 +82,11 @@ $(document).ready(async function() {
         })
         .catch(error => {
             // Gestisci eventuali errori durante la richiesta
+            const element2 = document.getElementById('error_overlay');
+            element2.style.visibility = 'visible';
+            const element3 = document.getElementById('loading_overlay');
+            element3.style.visibility = 'hidden';
+            console.log("Errore generazione mostro");
             console.error(error);
         });
     }
@@ -159,6 +175,7 @@ function hatch_animation() {
         element2.style.visibility = 'hidden';
         setTimeout(function() {
             element.style.visibility = 'hidden';
+            image.classList.toggle('not-zoomed');
         }, 1000);
     }, 2000);
     
@@ -177,7 +194,8 @@ function error_back() {
 }
 
 function new_monster_back() {
-    console.log("miaos")
+    console.log("miaosaa")
     const element = document.getElementById('new_monster_overlay');
     element.style.visibility = 'hidden';
+    element.classList.toggle('fade-in');
 }

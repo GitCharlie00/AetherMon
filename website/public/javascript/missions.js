@@ -19,12 +19,32 @@ class Mission {
     }
 }
 
+if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
+    console.log('Metamask installed');
+  } else {
+    console.log('Metamask not installed');
+    window.location.href = "/";
+  }
+
 let actual_first_monster_index = 0
 let monsters_list = [];
 
 console.log("miaos")
 
 let first_monster = monsters_list[actual_first_monster_index];
+
+missions_list = [];
+
+
+
+const hard_mission = new Mission("find the moster sword to defeat Ganondorf",0);
+missions_list.push(hard_mission)
+
+const normal_mission = new Mission("Uka Uka is terrorizing the city with his minions, chase them away",1);
+missions_list.push(normal_mission)
+
+const easy_mission = new Mission("A monster similar to a Rathalos is hidden in the mountains",2);
+missions_list.push(easy_mission)
 
 $(document).ready(async function(){
     //Initialization web3 and contract constants
@@ -60,19 +80,6 @@ $(document).ready(async function(){
     
 
     })
-    
-missions_list = [];
-
-
-
-const hard_mission = new Mission("text",0);
-missions_list.push(hard_mission)
-
-const normal_mission = new Mission("trova il gatto",1);
-missions_list.push(normal_mission)
-
-const easy_mission = new Mission("trova il cane",2);
-missions_list.push(easy_mission)
   
     async function getMonsterContractAddress(){
         return new Promise((resolve, reject) => {
@@ -89,6 +96,9 @@ missions_list.push(easy_mission)
       //Load the monster of the current user
       async function getMonstersOf(currentAccount){
         monsterContract.methods.getMonstersOwnedBy(currentAccount).call().then(monsters=>{
+            if (monsters.length==0) {
+                go_back();
+            }
           if(monsters.length != 0){
             monsterContract.methods.getMonstersURIOwnedBy(currentAccount).call().then(monstersURI=>{
     
@@ -96,15 +106,11 @@ missions_list.push(easy_mission)
                 var imageURL = monstersURI[i]+"?pinataGatewayToken="+pinataGatewayToken;
 
                 const monster = new Monster(50, 70, 40, 90, 2, [15, 1], 'monster', 'Ash', imageURL);
-                monsters_list.push(monster);  
-                console.log(monsters_list)   
+                monsters_list.push(monster);   
     
               }
     
             }).then( miao => {
-              console.log("maraiaos")
-              console.log(monsters_list) 
-        console.log(monsters_list[0])
         first_monster =  monsters_list[actual_first_monster_index];
         load_first_monster();
         load_missions();
@@ -124,13 +130,8 @@ function load_first_monster(){
 }
 
 function update_new_first_monster() {
-    console.log(monsters_list)
-    console.log("miaooooooooooooooooooooooooooooo")
-    console.log(actual_first_monster_index)
-    console.log(monsters_list[0])
     new_first_monster = monsters_list[actual_first_monster_index]
     const monster_image = document.getElementById('main_monster_image');
-    console.log(new_first_monster)
     monster_image.src=new_first_monster.image_url;
     const monster_name = document.getElementById('main_monster_name');
     monster_name.textContent=new_first_monster.name;
@@ -150,7 +151,6 @@ function popup_monster_list() {
     fetch('html/monster_card.html')
     .then(response => response.text())
     .then(html => {
-                console.log("miaoas")
                 const newString = 'class="monster_card_list_slot" ' + 'id="' +new_id +'"';
                 html = html.replace('class="monster_card_list_slot"', newString);
                 popup_monster_list.insertAdjacentHTML('beforeend', html)
@@ -192,7 +192,6 @@ function close_pop_infos() {
 }
 
 function buttonSelectNewMonster(index) {
-    console.log("pressed");
     actual_first_monster_index = index;
     load_first_monster();
     close_pop_monster_list()
@@ -226,10 +225,6 @@ function popupSelectedMonsterInfos() {
     popupMonsterInfos(actual_first_monster_index);
 }
 
-function test(){
-    console.log("testz")
-}
-
 function select_mission(index){
     const element = document.getElementById('start_overlay');
     element.style.visibility = 'visible';
@@ -245,20 +240,37 @@ function load_missions() {
 
     console.log("missions loaded");
     let hard_mission_element = document.getElementById("hard_mission");
-    var hard_mission_element_text = hard_mission_element.querySelector('.mission_info');
+    var hard_mission_element_text = hard_mission_element.querySelector('.mission_type');
     hard_mission_element_text.textContent = hard_mission.text
+    var hard_mission_element_text = hard_mission_element.querySelector('.mission_info');
+    hard_mission_element_text.textContent = "hard mission";
+    hard_mission_element_text.style.color = "white";
 
     let normal_mission_element = document.getElementById("normal_mission");
-    var normal_mission_element_text = normal_mission_element.querySelector('.mission_info');
+    var normal_mission_element_text = normal_mission_element.querySelector('.mission_type');
     normal_mission_element_text.textContent = normal_mission.text
+    var normal_mission_element_text = normal_mission_element.querySelector('.mission_info');
+    normal_mission_element_text.textContent = "normal mission";
+    normal_mission_element_text.style.color = "white";
 
     let easy_mission_element = document.getElementById("easy_mission");
-    var easy_mission_element_text = easy_mission_element.querySelector('.mission_info');
+    var easy_mission_element_text = easy_mission_element.querySelector('.mission_type');
     easy_mission_element_text.textContent = easy_mission.text
+    var easy_mission_element_text = easy_mission_element.querySelector('.mission_info');
+    easy_mission_element_text.textContent = "easy mission";
+    easy_mission_element_text.style.color = "white";
 
 
 }
 
 function back_from_list(){
     
+}
+
+function go_back() {
+    window.location.href = "/homepage";
+}
+
+function go_to_battle() {
+    window.location.href = "/battle";
 }

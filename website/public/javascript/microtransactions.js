@@ -1,3 +1,10 @@
+if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
+    console.log('Metamask installed');
+  } else {
+    console.log('Metamask not installed');
+    window.location.href = "/";
+  }
+
 const web3 = new Web3(window.ethereum ||"http://localhost:7545");
 
 var gameContractData;
@@ -142,6 +149,6 @@ async function buyAECoin(){
 
 async function balance(currentAccount){
     gameContract.methods.coinBalanceOf(currentAccount).call().then((result)=>{
-          $("#balance").text(result+ " AEC");
+          $("#balance").text(result);
       });
 }

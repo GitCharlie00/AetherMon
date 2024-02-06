@@ -7,31 +7,30 @@
 
 .mission_container {
     display: flex;
-    height: 90px;
-    width: 450px;
-    background-image: linear-gradient(to bottom, rgb(14, 217, 253), white);
+    height: 120px;
+    width: 750px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .mission_info {
-    flex:2;
-    margin:8px;
+    flex:1;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(255, 233, 35), white);
+    background-color: black;
 }
 
 .mission_difficulty{
     flex:1;
-    margin:8px;
+    margin:14px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .image_difficulty{
-    width: 90%;
+    width: 50%;
 }
 
 .mission_type{
@@ -40,5 +39,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(249, 249, 249);
 }

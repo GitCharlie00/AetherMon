@@ -86,3 +86,7 @@ function goToMarketplace(){
   window.location = "/market";
 }
 
+function play(){
+    window.location.href = "/missions";
+
+}

@@ -112,3 +112,32 @@ body, html {
     justify-content: center;
     align-items: center;
 }
+
+.options_space{
+    flex:5;
+}
+
+.balance_option{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.balance_option_1{
+    flex:2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance_option_2{
+    flex:1;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}

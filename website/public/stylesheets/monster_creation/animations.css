@@ -22,6 +22,11 @@
     height: 200%;
   }
 
+  #spark_img.not-zoomed {
+    width: 1%;
+    height: 1%;
+  }
+
   #spark_img.fade-in {
     opacity: 0; /* Imposta l'opacità a 1 per rendere l'immagine completamente visibile */
   }
