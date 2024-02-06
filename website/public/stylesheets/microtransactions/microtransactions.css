@@ -14,6 +14,7 @@ body, html {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .micro_cards {
@@ -64,6 +65,11 @@ body, html {
 
 .options_space{
     flex:5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
 }
 
 .balance_option_inner{

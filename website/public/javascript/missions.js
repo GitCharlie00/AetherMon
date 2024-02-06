@@ -28,8 +28,7 @@ if (typeof window.ethereum !== 'undefined' && window.ethereum.isMetaMask) {
 
 let actual_first_monster_index = 0
 let monsters_list = [];
-
-console.log("miaos")
+let selected_mission_index = 0
 
 let first_monster = monsters_list[actual_first_monster_index];
 
@@ -228,6 +227,7 @@ function popupSelectedMonsterInfos() {
 function select_mission(index){
     const element = document.getElementById('start_overlay');
     element.style.visibility = 'visible';
+    selected_mission_index=index;
     console.log("mission_selected "+ index);
 }
 
@@ -272,5 +272,13 @@ function go_back() {
 }
 
 function go_to_battle() {
-    window.location.href = "/battle";
+    monsterIDString ="rambabello";
+    missionDifficultyNumber = missions_list[selected_mission_index].type;
+
+    const data = { monsterIDString: monsterIDString, missionDifficultyNumber: missionDifficultyNumber };
+    // Costruisci l'URL con i parametri di query
+    var url = '/battle?' + $.param(data);
+    
+    // Cambia pagina
+    window.location.href = url;
 }
