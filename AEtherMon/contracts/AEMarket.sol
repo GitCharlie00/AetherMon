@@ -57,7 +57,6 @@ contract AEMarket{
     }
 
     //*--------------Events--------------
-    //TODO : selled , onSale, Retired, ...
     event NewOnSale(uint256 tokenId,address seller,uint256 price);
     event Retired(uint256 tokenId,address seller);
     event Selled(uint256 tokenId, address seller, address buyer);

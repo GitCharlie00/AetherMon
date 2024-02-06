@@ -2,7 +2,6 @@
 pragma solidity ^0.8.18;
 
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-//import "./Owner.sol";
 
 contract AEMonsterNFT is ERC721URIStorage{
     //*--------------State variables--------------
@@ -14,10 +13,7 @@ contract AEMonsterNFT is ERC721URIStorage{
         uint8 HP;                               //Health Point
         uint8 SP;                               //Speed Point
         uint8 level;                            //Higher the level stronger the monster (higher stats) //*Starting level is 1, max level is 100
-        //TODO; type
     }   
-
-    //AEMonster[] public monsters;                //All the monsters created so far TODO:Maybe is better replace the use of the array
 
     mapping (uint256 => AEMonster) private fromIdToMonster;                         //Map to get the monster stats from its id
     mapping (address =>mapping(uint256 => AEMonster)) public monstersOwnedBy;      //Map the monsters owned by an account
@@ -32,7 +28,7 @@ contract AEMonsterNFT is ERC721URIStorage{
  
     constructor(address _gameContractAddress) ERC721("AEMonster","AEM"){
         tokenId = 0;
-        randomSeed = block.timestamp;                           //Usefull for randomness in the random function
+        randomSeed = block.timestamp;                           //Usefull for "randomness" in the random function
         gameContractAddress = _gameContractAddress;
     }
     
@@ -52,7 +48,7 @@ contract AEMonsterNFT is ERC721URIStorage{
             monsterId: tokenId,
             AP: (uint8)(random()),
             DP: (uint8)(random()),
-            HP: (uint8)(random() + 5),                //5 is the base HP for each Monster
+            HP: (uint8)(random() + 5),                                             //5 is the base HP for each Monster
             SP: (uint8)(random()),
             level : 1                                       
         });
@@ -122,9 +118,8 @@ contract AEMonsterNFT is ERC721URIStorage{
     }
 
     
-    //!Funtion to generate random number
+    //!Funtion to generate "random" number
     function random() private view returns (uint256){ 
-        //TODO: change this implemantation with the use of chainlink VRF : https://docs.chain.link/vrf
         return ((uint( keccak256(abi.encodePacked (msg.sender, block.timestamp, blockhash(block.number - 1)))))%10)+1;
     }
 

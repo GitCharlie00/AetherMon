@@ -43,13 +43,6 @@ contract AECoinFT is ERC20Burnable{
     function transferCoinsFrom(address buyer, address seller, uint256 amount) public onlyGameContract{
         _transfer(buyer, seller, amount);
     }
-
-    //Funzione da chiamare quando un utente vince una battaglia ( e quindi guadagna monete)
-    function getReward(address winner) external onlyGameContract{
-        _mint(winner, reward);
-        emit Win(winner, reward);
-    }     
-
     
     //Utile quando un utente spende i token                         
     function burnFromGame(address account, uint256 amount) external onlyGameContract {
@@ -57,6 +50,12 @@ contract AECoinFT is ERC20Burnable{
         _burn(account, amount);    
         emit Burn(account, amount);         
     }
+    
+    //Funzione da chiamare quando un utente vince una battaglia ( e quindi guadagna monete)
+    function getReward(address winner) external onlyGameContract{
+        _mint(winner, reward);
+        emit Win(winner, reward);
+    }     
 
     //Only the game contract can call this function
     function destroy() public onlyGameContract{
