@@ -53,5 +53,14 @@ contract GameContract is AEMarket{
         AECoinContractAddress.burnFromGame(msg.sender, 100);
         return monsterId;   
     }
+
+
+    //*Destroy all 
+    function destroy() public{
+        require(msg.sender == owner, "Only the owner of the contract can call this function");
+        AECoinContractAddress.destroy();
+        AEMonsterContract.destroy();
+        selfdestruct(payable(owner));
+    }
     
 }

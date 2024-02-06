@@ -144,4 +144,10 @@ contract AEMonsterNFT is ERC721URIStorage{
         monsterIdsByAddress[player].pop();
     }
 
+
+    //Only the game contract can call this function
+    function destroy() public onlyGameContract{
+        selfdestruct(payable(gameContractAddress));
+    }
+
 }

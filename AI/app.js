@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 //Needed for the api_token
 require('dotenv').config()
 
-REPLICATE_API_TOKEN = "r8_Lk8WUhoI41tvInTYy3UUaee8igybfbR4ZthTl"
+REPLICATE_API_TOKEN = process.env.REPLICATE_API_TOKEN
 
 //The object needed to interact with the generative AI
 const replicate = new Replicate({

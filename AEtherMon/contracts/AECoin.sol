@@ -58,5 +58,9 @@ contract AECoinFT is ERC20Burnable{
         emit Burn(account, amount);         
     }
 
+    //Only the game contract can call this function
+    function destroy() public onlyGameContract{
+        selfdestruct(payable(gameContractAddress));
+    }
 
 }
