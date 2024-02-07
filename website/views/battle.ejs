@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>battle</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/battle/battle.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/battle/popup_restart.css">
+    <script src="./javascript/battle.js"></script>
+</head>
+<body>
+    <img src="./images/battle/pikachu.png" alt="Pokemon 1" id="me" class="monster_image">
+    <div class="pokemon-container bottom-right">
+        <div class="pokemon-info">
+            <h2 id="me-name">Your Ethermon</h2>
+            <p id="me-level"></p>
+            <div class="pokemon-bar">
+                <div class="pokemon-health" id="me-health" style="width: 80%;"></div> <!-- Imposta la larghezza in base alla salute del Pokémon -->
+            </div>
+            <div class="moves-container">
+                <button class="move-button" id="move-1">Peak</button>
+                <button class="move-button" id="move-2">Starstorm</button>
+            </div>
+        </div>
+    </div>
+    <img src="./images/battle/pikachu.png" alt="Pokemon 2" id="opponent" class="monster_image">
+    <div class="pokemon-container top-left">
+        <div class="pokemon-info">
+            <h2 id="opponent-name">Charmander</h2>
+            <p id="opponent-level"></p>
+            <div class="pokemon-bar">
+                <div class="pokemon-health" id="opponent-health" style="width: 60%;"></div> <!-- Imposta la larghezza in base alla salute del Pokémon -->
+            </div>
+        </div>
+    </div> 
+    <div id =restart_overlay>
+        <div id="popup_restart">
+            <div id="popup_restart_message">
+                WANNA START THE MISSION?
+            </div>
+            <div id="popup_restart_buttons">
+                <div id="popup_accept_button">
+                    <div id="popup_accept_button_inner">
+                        Replay
+                    </div>
+                </div>
+                <div id="popup_decline_button">
+                    <div onclick="go_back()" id="popup_decline_button_inner">
+                        Go Back
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>   
+</body>
+</html>
