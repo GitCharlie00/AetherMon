@@ -35,15 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Funzione per gestire l'attacco del giocatore
   const playerAttack = () => {
-    console.log(opponentPokemon.currentHealth )
     const damage = Math.floor(Math.random() * playerPokemon.attack) + 1;
     opponentPokemon.currentHealth -= damage;
-    console.log(opponentPokemon)
-    console.log(opponentPokemon.currentHealth )
 
     if (opponentPokemon.currentHealth <= 0) {
         opponentPokemon.currentHealth = 0;
-        popup_restart(false);
+        popup_restart(true);
     }
 
     updateHealthBars();
@@ -143,9 +140,7 @@ function load_enemy_monster()
   var queryString = window.location.search;
   var searchParams = new URLSearchParams(queryString);
   var difficulty = searchParams.get("missionDifficultyNumber");
-  var dif_text = "Aasy";
-
-  console.log("difficoltaaaaaaaaaaaaaas", difficulty)
+  var dif_text = "Easy";
 
   let name= "SHAONE";
   let level= 42;
