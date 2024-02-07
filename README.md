@@ -13,3 +13,23 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
 - **AI-Generated Icons:** Aethermons are unique and generated using artificial intelligence, adding diversity to the collection.
 - **Missions:** Aethermons can participate in missions to enhance or modify their attributes, adding a dynamic element to the gameplay.
 - **Decentralized:** Aethermon operates on a decentralized blockchain, ensuring transparency and security.
+
+## System Requirements.
+- [Node.js](https://nodejs.org/) installed
+- [npm](https://www.npmjs.com/) (Node Package Manager) installed
+
+## Installation
+
+1. Clone the repository on your computer:
+   ```bash
+   git clone https://github.com/GitCharlie00/AetherMon
+
+2. Go to the root directory
+    ```bash
+    cd Aethermon
+
+3. Run npm to install the project dependencies
+    ```bash
+    npm install
+
+## Configuration
