@@ -71,7 +71,7 @@ function load_microtransactions_cards() {
 
         let micro_card= document.getElementById(new_id);
         var micro_card_money = micro_card.querySelector('.micro_card_down');
-        micro_card_money.textContent=microtransaction_list[i].money + "ether";
+        micro_card_money.textContent=microtransaction_list[i].money + "ETH";
 
         var micro_card_aethercoin = micro_card.querySelector('.micro_card_athercoin');
         micro_card_aethercoin.textContent=microtransaction_list[i].aethercoin + "ÆC";
@@ -142,8 +142,8 @@ async function buyAECoin(){
         balance(currentAccount);
     })
     .on("error",(error)=>{
-        console.log("Errore nella transazione: ",error);
-        alert("Errore nella transazione");
+        console.log("Error in the transaction: ",error);
+        alert("Error in the transaction");
     });
 }
 

@@ -63,7 +63,6 @@ app.get("/", (req,res) => {
 
 //homepage.ejs
 app.get("/homepage",(req,res)=>{
-    //TODO: Aggiungere controllo
     res.render("homepage");
 });
     

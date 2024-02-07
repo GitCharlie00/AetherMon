@@ -13,7 +13,7 @@ const crypto = require('crypto');
 const animals = [
   "Elephant","Lion","Tiger","Giraffe","Zebra","Kangaroo","Koala",
   "Penguin","Panda","Dolphin","Horse","Dog","Cat","Rabbit","Monkey",
-  "Gorilla","Chimpanzee","Squirrel","Fox","Bear", "Binturong", "Capybara"
+  "Gorilla","Chimpanzee","Squirrel","Fox","Bear", "Binturong", "Capybara", "Dragon"
 ];
 
 const elements = [

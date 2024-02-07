@@ -29,12 +29,12 @@ if (window.ethereum) {
               document.getElementById('nomeAccount').textContent = `Your account is: \n ${indirizzo}`;
           }
       } catch (error) {
-          console.error("Errore durante il consenso MetaMask:", error);
-          alert("Errore durante il consenso MetaMask")
+          console.error("Error during MetaMask consensus:", error);
+          alert("Error during MetaMask consensus")
       }
   } else {
-      console.error("MetaMask non è installato");
-      alert("Errore durante il consenso MetaMask:");
+      console.error("MetaMask is not installed");
+      alert("MetaMask is not installed");
   }
 }
 
@@ -67,8 +67,8 @@ async function selezionaOpzione(event) {
         window.location.href = "/";
         await ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] });
       } catch (error) {
-          console.error('Errore durante la disconnessione:', error);
-          alert("Errore durante la disconnessione!");
+          console.error('Error during disconnection:', error);
+          alert("Error during disconnection!");
       }
       break;
       default:

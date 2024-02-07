@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-x: hidden;   
+    overflow-y: auto;   
     grid-template-columns: repeat(autofill, minmax(30px,60px));
 }
 
@@ -54,10 +55,9 @@
     justify-content: center;
     align-items: center;
     width:80%;
-    height: 60%;
-    background-image: linear-gradient(to bottom, rgb(255, 159, 57), rgb(255, 255, 255));
+    height: 80%;
+    background-color: rgb(194, 145, 240);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    
 }
 
 #popup_monsters_name_inner{
@@ -73,6 +73,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
 }
 
 #popup_monster_back_inner{
@@ -81,6 +82,8 @@
     align-items: center;
     width:80%;
     height: 80%;
-    background-image: linear-gradient(to right, rgb(240, 255, 34), rgb(255, 255, 255));
+    background-color:rgb(209, 164, 251);
+    cursor: pointer;
+    border-radius: 8px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
