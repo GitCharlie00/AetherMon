@@ -17,6 +17,7 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
 ## System Requirements.
 - [Node.js](https://nodejs.org/) installed
 - [npm](https://www.npmjs.com/) (Node Package Manager) installed
+- [MetaMask](https://metamask.io/) installed
 
 ## Installation
 
@@ -32,4 +33,18 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
     ```bash
     npm install
 
-## Configuration
+## Run the project
+
+1. Run the website server
+    ```bash
+   cd Aethermon/website
+   node app.js
+
+2. Run the AI server
+    ```bash
+   cd Aethermon/AI
+   node app.js
+
+3. Open the site with localost on the Aethermon/website.js port
+    ```bash
+   localhost:3000
