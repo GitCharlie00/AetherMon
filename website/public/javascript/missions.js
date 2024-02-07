@@ -132,11 +132,12 @@ function update_new_first_monster() {
     monster_image.src=new_first_monster.image_url;
     const monster_name = document.getElementById('main_monster_name');
     monster_name.textContent=new_first_monster.name;
+    first_monster = new_first_monster
 }
 
-function change_monster(index){
+// function change_monster(index){
 
-}
+// }
 
 function popup_monster_list() {
     const element = document.getElementById('list_overlay');
