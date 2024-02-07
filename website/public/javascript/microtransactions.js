@@ -134,7 +134,7 @@ function go_back() {
 async function buyAECoin(){
     const numberOfCoins = microtransaction_list[choosenMicro].aethercoin;
     const cost = numberOfCoins * 0.00005;
-    const costInWei = web3.utils.toWei(cost.toString(), 'ether');
+    const costInWei = web3.utils.toWei(cost.toString(), 'ETH');
     gameContract.methods.purchaseGameCoins(numberOfCoins).send( {from:currentAccount, value:costInWei,gas: '100000',} )
     .on("confirmation",async ()=>{                  
         console.log("Pagamento effettuato"); 
@@ -142,8 +142,8 @@ async function buyAECoin(){
         balance(currentAccount);
     })
     .on("error",(error)=>{
-        console.log("Errore nella transazione: ",error);
-        alert("Errore nella transazione");
+        console.log("Error in the transaction: ",error);
+        alert("Error in the transaction");
     });
 }
 

@@ -198,8 +198,8 @@ $(document).ready(async function(){
             removeFromSelling(monsterId);
           });
 
-          console.log("Mostro messo in vendita con successo");
-          const errorType='Mostro messo in vedita con successo!';
+          console.log("Monster successfully put on sale");
+          const errorType='Monster successfully put on sale!';
           $('#errorModalBody').text( errorType);
           $('#errorModal').modal('show');
         }
@@ -229,8 +229,8 @@ $(document).ready(async function(){
     gameContract.methods.buyOnSaleMonster(buyID).send({from:currentAccount}).then(result=>{
       if(result){
         $("#confirmModal").modal("hide");
-        console.log("Mostro acquistato con successo");
-        const errorType='Mostro acquistato con successo';
+        console.log("Monster successfully purchased");
+        const errorType='Monster successfully purchased';
           $('#errorModalBody').text( errorType);
           $('#errorModal').modal('show');
       }
