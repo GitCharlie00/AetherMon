@@ -62,4 +62,4 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
     ```bash
    localhost:3000
 
-8. Login with Metamask and gotta block'em all!
+8. Access the DApp with Metamask and gotta block'em all!
