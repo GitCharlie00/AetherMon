@@ -71,7 +71,7 @@ function load_microtransactions_cards() {
 
         let micro_card= document.getElementById(new_id);
         var micro_card_money = micro_card.querySelector('.micro_card_down');
-        micro_card_money.textContent=microtransaction_list[i].money + "ether";
+        micro_card_money.textContent=microtransaction_list[i].money + "ETH";
 
         var micro_card_aethercoin = micro_card.querySelector('.micro_card_athercoin');
         micro_card_aethercoin.textContent=microtransaction_list[i].aethercoin + "ÆC";
@@ -134,7 +134,7 @@ function go_back() {
 async function buyAECoin(){
     const numberOfCoins = microtransaction_list[choosenMicro].aethercoin;
     const cost = numberOfCoins * 0.00005;
-    const costInWei = web3.utils.toWei(cost.toString(), 'ETH');
+    const costInWei = web3.utils.toWei(cost.toString(), 'ether');
     gameContract.methods.purchaseGameCoins(numberOfCoins).send( {from:currentAccount, value:costInWei,gas: '100000',} )
     .on("confirmation",async ()=>{                  
         console.log("Pagamento effettuato"); 

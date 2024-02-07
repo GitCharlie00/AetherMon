@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-x: hidden;   
+    overflow-y: auto;   
     grid-template-columns: repeat(autofill, minmax(30px,60px));
 }
 
@@ -57,7 +58,6 @@
     height: 80%;
     background-color: rgb(194, 145, 240);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    
 }
 
 #popup_monsters_name_inner{
@@ -73,6 +73,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
 }
 
 #popup_monster_back_inner{

@@ -1,8 +1,9 @@
 body, html {
     font-family: sans-serif;
     height: 100%;
+    width: 100%;
     margin: 0;
-    
+    overflow: hidden;
 }
 h1 {
     font-family:sans-serif ;
@@ -140,6 +141,7 @@ h1 {
     align-items: center;
     display:flex;
     height: 100%;
+    font-weight: 600;
 }
 
 .blue_block_button_inner {
