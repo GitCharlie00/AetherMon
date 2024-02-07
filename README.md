@@ -18,6 +18,8 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
 - [Node.js](https://nodejs.org/) installed
 - [npm](https://www.npmjs.com/) (Node Package Manager) installed
 - [MetaMask](https://metamask.io/) installed
+- [Ganache](https://trufflesuite.com/ganache/) installed
+- [Truffle](https://trufflesuite.com/) installed
 
 ## Installation
 
@@ -29,22 +31,35 @@ Aethermon is a blockchain project developed as part of the "Blockchain and Ledge
     ```bash
     cd Aethermon
 
-3. Run npm to install the project dependencies
+3. Run npm to install o Aethermon/AI directory
     ```bash
+    cd Aethermon/AI
     npm install
 
 ## Run the project
 
-1. Run the website server
+1. Create a Ganache workspace linked with the project
+
+2. Inesert Aethermon/Aethermon/"truffle-config.js"
+
+3. Run on Aethermon/Aethermon
+   ```bash
+    truffle migrate
+
+4. Login on MetaMask and bind the network just created with the Ganache URL
+
+5. Run the website server
     ```bash
    cd Aethermon/website
    node app.js
 
-2. Run the AI server
+6. Run the AI server
     ```bash
    cd Aethermon/AI
    node app.js
 
-3. Open the site with localost on the Aethermon/website.js port
+7. Open the site with localost on the Aethermon/website.js port
     ```bash
    localhost:3000
+
+8. Login with Metamask and gotta block'em all!
