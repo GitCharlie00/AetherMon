@@ -95,21 +95,23 @@
 }
 
 .button_select_list_card{
+    cursor: pointer;
     width: 80%;
     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(255, 94, 94), rgb(255, 255, 255));
+    background-image: linear-gradient(to top, rgb(240, 255, 34), rgb(157, 165, 46));
 
 }
 
 .button_info_list_card{
+    cursor: pointer;
     width: 80%;
     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(255, 94, 94), rgb(255, 255, 255));
+    background-image: linear-gradient(to top, rgb(240, 255, 34), rgb(157, 165, 46));
 
 }

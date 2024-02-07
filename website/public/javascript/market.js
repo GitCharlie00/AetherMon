@@ -398,7 +398,7 @@ $(document).ready(async function(){
     '<img src="'+imageURL+'">'+
     '<p id="price">Price: '+newPrice+'AEC</p>'+
     '<button id="remove">Remove</button>'+
-    '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeModal'+monsterId+'">Change Price</button>'+
+    '<button data-bs-toggle="modal" data-bs-target="#changeModal'+monsterId+'">Change Price</button>'+
   '</div>'+
   '<div class="modal fade" id="changeModal'+monsterId+'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">'+
     '<div class="modal-dialog">'+
@@ -433,7 +433,7 @@ $(document).ready(async function(){
     '<p id="sp">SP: '+sp+'</p>'+
     '<p id="dp">DP: '+dp+'</p>'+
     '<p id="level">Level: '+level+'</p>'+
-    '<button id="buy" class="btn btn-primary">Buy</button>'+
+    '<button id="buy">Buy</button>'+
   '<\div>';
   }
 

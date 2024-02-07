@@ -350,7 +350,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/ERC20Burnable.sol)\r\n\r\npragma solidity ^0.8.18;\r\n\r\nimport {ERC20} from \"../ERC20.sol\";\r\nimport {Context} from \"../../../utils/Context.sol\";\r\n\r\n/**\r\n * @dev Extension of {ERC20} that allows token holders to destroy both their own\r\n * tokens and those that they have an allowance for, in a way that can be\r\n * recognized off-chain (via event analysis).\r\n */\r\nabstract contract ERC20Burnable is Context, ERC20 {\r\n    /**\r\n     * @dev Destroys a `value` amount of tokens from the caller.\r\n     *\r\n     * See {ERC20-_burn}.\r\n     */\r\n    function burn(uint256 value) public virtual {\r\n        _burn(_msgSender(), value);\r\n    }\r\n\r\n    /**\r\n     * @dev Destroys a `value` amount of tokens from `account`, deducting from\r\n     * the caller's allowance.\r\n     *\r\n     * See {ERC20-_burn} and {ERC20-allowance}.\r\n     *\r\n     * Requirements:\r\n     *\r\n     * - the caller must have allowance for ``accounts``'s tokens of at least\r\n     * `value`.\r\n     */\r\n    function burnFrom(address account, uint256 value) public virtual {\r\n        _spendAllowance(account, _msgSender(), value);\r\n        _burn(account, value);\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\cschi\\Desktop\\Scuola\\Magistrale\\Secondo Anno\\Primo Semestre\\Blockchain and DLTs\\Progetto\\AetherMon\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Burnable.sol",
+  "sourcePath": "C:\\Users\\carme\\OneDrive\\Desktop\\AetherMon\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Burnable.sol",
   "ast": {
     "absolutePath": "project:/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
     "exportedSymbols": {
@@ -935,7 +935,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-02-06T20:56:43.697Z",
+  "updatedAt": "2024-02-07T08:37:12.629Z",
   "devdoc": {
     "details": "Extension of {ERC20} that allows token holders to destroy both their own tokens and those that they have an allowance for, in a way that can be recognized off-chain (via event analysis).",
     "errors": {

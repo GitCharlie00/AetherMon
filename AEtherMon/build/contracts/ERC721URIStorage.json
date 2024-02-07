@@ -476,7 +476,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC721/extensions/ERC721URIStorage.sol)\r\n\r\npragma solidity ^0.8.18;\r\n\r\nimport {ERC721} from \"../ERC721.sol\";\r\nimport {Strings} from \"../../../utils/Strings.sol\";\r\nimport {IERC4906} from \"../../../interfaces/IERC4906.sol\";\r\nimport {IERC165} from \"../../../interfaces/IERC165.sol\";\r\n\r\n/**\r\n * @dev ERC721 token with storage based token URI management.\r\n */\r\nabstract contract ERC721URIStorage is IERC4906, ERC721 {\r\n    using Strings for uint256;\r\n\r\n    // Interface ID as defined in ERC-4906. This does not correspond to a traditional interface ID as ERC-4906 only\r\n    // defines events and does not include any external function.\r\n    bytes4 private constant ERC4906_INTERFACE_ID = bytes4(0x49064906);\r\n\r\n    // Optional mapping for token URIs\r\n    mapping(uint256 tokenId => string) private _tokenURIs;\r\n\r\n    /**\r\n     * @dev See {IERC165-supportsInterface}\r\n     */\r\n    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, IERC165) returns (bool) {\r\n        return interfaceId == ERC4906_INTERFACE_ID || super.supportsInterface(interfaceId);\r\n    }\r\n\r\n    /**\r\n     * @dev See {IERC721Metadata-tokenURI}.\r\n     */\r\n    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {\r\n        _requireOwned(tokenId);\r\n\r\n        string memory _tokenURI = _tokenURIs[tokenId];\r\n        string memory base = _baseURI();\r\n\r\n        // If there is no base URI, return the token URI.\r\n        if (bytes(base).length == 0) {\r\n            return _tokenURI;\r\n        }\r\n        // If both are set, concatenate the baseURI and tokenURI (via string.concat).\r\n        if (bytes(_tokenURI).length > 0) {\r\n            return string.concat(base, _tokenURI);\r\n        }\r\n\r\n        return super.tokenURI(tokenId);\r\n    }\r\n\r\n    /**\r\n     * @dev Sets `_tokenURI` as the tokenURI of `tokenId`.\r\n     *\r\n     * Emits {MetadataUpdate}.\r\n     */\r\n    function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal virtual {\r\n        _tokenURIs[tokenId] = _tokenURI;\r\n        emit MetadataUpdate(tokenId);\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\cschi\\Desktop\\Scuola\\Magistrale\\Secondo Anno\\Primo Semestre\\Blockchain and DLTs\\Progetto\\AetherMon\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721URIStorage.sol",
+  "sourcePath": "C:\\Users\\carme\\OneDrive\\Desktop\\AetherMon\\AEtherMon\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721URIStorage.sol",
   "ast": {
     "absolutePath": "project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
     "exportedSymbols": {
@@ -2052,7 +2052,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-02-06T20:56:43.716Z",
+  "updatedAt": "2024-02-07T08:37:12.640Z",
   "devdoc": {
     "details": "ERC721 token with storage based token URI management.",
     "errors": {
