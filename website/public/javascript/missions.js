@@ -75,10 +75,7 @@ $(document).ready(async function(){
 
     let actual_first_monster_index = 0;
 
-    await getMonstersOf(currentAccount).then(monster1 => {
-    
-
-    })
+    await getMonstersOf(currentAccount).then(monster1 => {})
   
     async function getMonsterContractAddress(){
         return new Promise((resolve, reject) => {
