@@ -6,7 +6,7 @@ body {
     justify-content: center;
     height: 100vh;
     overflow: hidden; /* Rimuove le barre di scorrimento */
-    background: url('bg.png') center/contain no-repeat;
+    background: url("./images/battle/pikachu.png") center/contain no-repeat;
     font-family: Arial, sans-serif;
     position: relative;
 }
@@ -73,20 +73,19 @@ h1 {
     background-color: #3ce753; /* Colore rosso per la barra di vita */
 }
 
-.me,
-.opponent {
+.monster_image {
     position: absolute;
     width: 80px; /* Sostituisci con la larghezza desiderata per le immagini Pokemon */
     height: auto; /* L'altezza sarà proporzionata alla larghezza */
 }
 
-.me {
+#me {
     bottom: 25%;
     left: 18%;
     transform: scaleX(-1) scale(5.3);
 }
 
-.opponent {
+#opponent {
     top: 40%;
     right: 27%;
     transform: scale(3.3);

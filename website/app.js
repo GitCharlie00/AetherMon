@@ -69,7 +69,7 @@ app.get("/homepage",(req,res)=>{
     
 
 app.get("/battle", (req,res) => {
-    res.render("pokemon_battle")
+    res.render("battle")
 });
 
 app.get("/monster_creation", (req,res) => {

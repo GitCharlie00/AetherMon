@@ -1,5 +1,5 @@
 class Monster {
-    constructor(ps, attack, defense, speed, type, moves, name, owner, image_url) {
+    constructor(ps, attack, defense, speed, type, moves, name, id, image_url) {
         this.ps = ps;
         this.attack = attack;
         this.defense = defense;
@@ -7,7 +7,7 @@ class Monster {
         this.type = type;
         this.moves = moves;
         this.name = name;
-        this.owner = owner;
+        this.id = id;
         this.image_url = image_url;
     }
 }
@@ -36,7 +36,7 @@ missions_list = [];
 
 
 
-const hard_mission = new Mission("find the moster sword to defeat Ganondorf",0);
+const hard_mission = new Mission("Find the moster sword to defeat Ganondorf",0);
 missions_list.push(hard_mission)
 
 const normal_mission = new Mission("Uka Uka is terrorizing the city with his minions, chase them away",1);
@@ -103,8 +103,9 @@ $(document).ready(async function(){
     
               for(let i =0;i<monsters.length;i++){
                 var imageURL = monstersURI[i]+"?pinataGatewayToken="+pinataGatewayToken;
+                console.log(monsters[i])
 
-                const monster = new Monster(50, 70, 40, 90, 2, [15, 1], 'monster', 'Ash', imageURL);
+                const monster = new Monster(monsters[i].HP, monsters[i].AP, monsters[i].DP, monsters[i].SP, 1, [15, 1], 'monster', monsters[i].monsterId, imageURL);
                 monsters_list.push(monster);   
     
               }
@@ -272,13 +273,27 @@ function go_back() {
 }
 
 function go_to_battle() {
-    monsterIDString ="rambabello";
+    monsterIDString =first_monster.id;
+    monsterHP = first_monster.ps;
+    monsterSPEED = first_monster.speed;
+    monsterATTACK = first_monster.attack;
+    monsterDEFENSE = first_monster.defense;
+    monsterURL = first_monster.image_url;
     missionDifficultyNumber = missions_list[selected_mission_index].type;
 
-    const data = { monsterIDString: monsterIDString, missionDifficultyNumber: missionDifficultyNumber };
+    console.log(monsterHP)
+
+    const data = { missionDifficultyNumber: missionDifficultyNumber,
+        monsterIDString: monsterIDString,
+        monsterHP: monsterHP, 
+        monsterSPEED: monsterSPEED, 
+        monsterATTACK: monsterATTACK,
+        monsterDEFENSE: monsterDEFENSE,
+        monsterURL: monsterURL };
     // Costruisci l'URL con i parametri di query
     var url = '/battle?' + $.param(data);
     
     // Cambia pagina
     window.location.href = url;
 }
+
