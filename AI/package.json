@@ -1,0 +1,28 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "description": "AI generation of the Aethermon",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AI",
+    "generative",
+    "model",
+    "artificial",
+    "intelligence",
+    "NFT"
+  ],
+  "author": "Nicolo Dentale, Claudio Schiavella, Mattia Russo, Nicholas Urbanelli",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "replicate": "^0.25.2",
+    "save": "^2.9.0"
+  }
+}

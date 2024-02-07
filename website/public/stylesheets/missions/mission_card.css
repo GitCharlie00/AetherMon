@@ -6,6 +6,7 @@
 }
 
 .mission_container {
+
     display: flex;
     height: 120px;
     width: 750px;
@@ -14,12 +15,22 @@
 }
 
 .mission_info {
+    transition: transform 0.2s ease;
+    cursor: pointer;
     flex:1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+    border:3px solid rgb(56, 55, 55);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.mission_info:hover{
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);}
+
 
 .mission_difficulty{
     flex:1;
